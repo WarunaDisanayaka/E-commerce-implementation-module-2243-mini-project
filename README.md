@@ -11,7 +11,7 @@ setup pc
 
 open cmd and type this
 
-        <code>composer global require laravel/installer</code>
+        composer global require laravel/installer
     
 setup project
 
@@ -23,9 +23,9 @@ setup project
 
 4. install vender files
 
-    <code>composer install</code>
+        composer install
 
-    <code>composer update</code>
+        composer update
 
 5. install node files
 
