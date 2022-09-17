@@ -29,35 +29,35 @@ setup project
 
 5. install node files
 
-    <code>npm install</code>
+        npm install
 
 6. cope example .env file to .env file
 
-    <code>copy .env.example .env</code>
+        copy .env.example .env
 
 7. Genarete the key
 
-    <code>php artisan key:generate</code>
+        php artisan key:generate   
 
 8. create database name workers_yard
 
 9. change bellow if you use another one in .env file
 
-    <code>DB_DATABASE=blog</code>
+        DB_DATABASE=blog
 
-    <code>DB_USERNAME=root</code>
+        DB_USERNAME=root
 
-    <code>DB_PASSWORD=</code>
+        DB_PASSWORD=
 
 10. Run these command and run the project
 
-    <code>npm run dev</code>
+        npm run dev
 
 11. open another cmd in that project folder and run this command in that
 
-    <code>php artisan migrate</code>
+        php artisan migrate
 
-    <code>php artisan serve</code>
+        php artisan serve
 
 
 All the vue files are created in "resources/js/views" folder
