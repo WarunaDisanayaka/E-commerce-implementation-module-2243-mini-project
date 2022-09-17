@@ -43,11 +43,11 @@ setup project
 
 9. change bellow if you use another one in .env file
 
-    <code>DB_DATABASE=blog
+    <code>DB_DATABASE=blog</code>
 
-    DB_USERNAME=root
+    <code>DB_USERNAME=root</code>
 
-    DB_PASSWORD=</code>
+    <code>DB_PASSWORD=</code>
 
 10. Run these command and run the project
 
@@ -56,7 +56,7 @@ setup project
 11. open another cmd in that project folder and run this command in that
 
     <code>php artisan migrate<code>
-    
+
     <code>php artisan serve</code>
 
 
