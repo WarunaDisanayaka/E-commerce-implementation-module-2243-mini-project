@@ -24,6 +24,7 @@ setup project
 4. install vender files
 
     <code>composer install</code>
+
     <code>composer update</code>
 
 5. install node files
@@ -43,7 +44,9 @@ setup project
 9. change bellow if you use another one in .env file
 
     <code>DB_DATABASE=blog
+
     DB_USERNAME=root
+
     DB_PASSWORD=</code>
 
 10. Run these command and run the project
@@ -53,6 +56,7 @@ setup project
 11. open another cmd in that project folder and run this command in that
 
     <code>php artisan migrate<code>
+    
     <code>php artisan serve</code>
 
 
