@@ -2,16 +2,16 @@
 
 pre-requrements
 
-install xampp or wampp server
-install node js
-install comporser - https://getcomposer.org/download/
+    install xampp or wampp server
+    install node js
+    install comporser - https://getcomposer.org/download/
         (download exe file and install, do not provide poxy)
     
 setup pc 
 
 open cmd and type this
 
-        composer global require laravel/installer
+        <code>composer global require laravel/installer</code>
     
 setup project
 
@@ -22,8 +22,8 @@ open cmd in that folder
 Then run bellow command
 
 install vender files
-    composer install
-    composer update
+    <code>composer install
+    composer update</code>
 
 install node files
     npm install
@@ -43,7 +43,7 @@ change bellow if you use another one in .env file
 
 Run these command and run the project
     npm run dev
-    
+
 open another cmd in that project folder and run this command in that
     php artisan migrate
     php artisan serve
