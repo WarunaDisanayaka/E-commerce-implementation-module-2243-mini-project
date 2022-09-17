@@ -55,7 +55,7 @@ setup project
 
 11. open another cmd in that project folder and run this command in that
 
-    <code>php artisan migrate<code>
+    <code>php artisan migrate</code>
 
     <code>php artisan serve</code>
 
