@@ -2,38 +2,51 @@
 
 pre-requrements
 
-    install xampp or wampp server
-    install node js
-    install comporser - https://getcomposer.org/download/
+install xampp or wampp server
+install node js
+install comporser - https://getcomposer.org/download/
         (download exe file and install, do not provide poxy)
     
 setup pc 
 
-    open cmd and type this
-        <code>composer global require laravel/installer</code>
+open cmd and type this
+
+        composer global require laravel/installer
     
 setup project
 
-    <ul type="1">
-        <li>clone this repo</li>
-        <li>open cmd in that folder</li>
-        <li>Then run bellow command</li>
-        <li><code>composer install</code>
-            <code>composer update</code>
-            <code>npm install<code>
-            <code>copy .env.example .env</code>
-            <code>php artisan key:generate</code>
-        </li>
-        <li>create database name workers_yard
-        <li>change bellow if you use another one in .env file</li>
-            <code>DB_DATABASE=blog
-            DB_USERNAME=root
-            DB_PASSWORD=</code>
-        <li>Run these command and run the project</li>
-            <code>npm run dev</code>
-        <li>open another cmd in that project folder and run this command in that</li>
-            <code> php artisan migrate</code>
-            <code>php artisan serve</code>
-    </ul>
+clone this repo
+
+open cmd in that folder
+
+Then run bellow command
+
+install vender files
+    composer install
+    composer update
+
+install node files
+    npm install
+
+cope example .env file to .env file
+    copy .env.example .env
+
+Genarete the key
+    php artisan key:generate
+
+create database name workers_yard
+
+change bellow if you use another one in .env file
+    DB_DATABASE=blog
+    DB_USERNAME=root
+    DB_PASSWORD=
+
+Run these command and run the project
+    npm run dev
+    
+open another cmd in that project folder and run this command in that
+    php artisan migrate
+    php artisan serve
+
 
 All the vue files are created in "resources/js/views" folder
