@@ -15,38 +15,45 @@ open cmd and type this
     
 setup project
 
-clone this repo
+1. clone this repo
 
-open cmd in that folder
+2. open cmd in that folder
 
-Then run bellow command
+3. Then run bellow command
 
-install vender files
-    <code>composer install
-    composer update</code>
+4. install vender files
 
-install node files
-    npm install
+    <code>composer install</code>
+    <code>composer update</code>
 
-cope example .env file to .env file
-    copy .env.example .env
+5. install node files
 
-Genarete the key
-    php artisan key:generate
+    <code>npm install</code>
 
-create database name workers_yard
+6. cope example .env file to .env file
 
-change bellow if you use another one in .env file
-    DB_DATABASE=blog
+    <code>copy .env.example .env</code>
+
+7. Genarete the key
+
+    <code>php artisan key:generate</code>
+
+8. create database name workers_yard
+
+9. change bellow if you use another one in .env file
+
+    <code>DB_DATABASE=blog
     DB_USERNAME=root
-    DB_PASSWORD=
+    DB_PASSWORD=</code>
 
-Run these command and run the project
-    npm run dev
+10. Run these command and run the project
 
-open another cmd in that project folder and run this command in that
-    php artisan migrate
-    php artisan serve
+    <code>npm run dev</code>
+
+11. open another cmd in that project folder and run this command in that
+
+    <code>php artisan migrate<code>
+    <code>php artisan serve</code>
 
 
 All the vue files are created in "resources/js/views" folder
