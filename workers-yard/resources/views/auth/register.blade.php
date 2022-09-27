@@ -1,5 +1,7 @@
 <x-guest-layout>
+    <br><br>
     <x-jet-authentication-card>
+        <br><br>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
         </x-slot>
@@ -27,6 +29,26 @@
             <div class="mt-4">
                 <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+            </div>
+
+            <div>
+                <x-jet-label for="address" value="{{ __('Address') }}" />
+                <x-jet-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required autofocus autocomplete="address" />
+            </div>
+
+            <div>
+                <x-jet-label for="tel" value="{{ __('tel') }}" />
+                <x-jet-input id="tel" class="block mt-1 w-full" type="text" name="tel" :value="old('tel')" required autofocus autocomplete="tel" />
+            </div>
+
+            <div>
+                <x-jet-label for="gender" value="{{ __('Gender') }}" />
+                <select class="form-select" class="block mt-1 w-full" name="tel">
+                    <option value="notsay">Select one</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+
+                  </select>
             </div>
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
