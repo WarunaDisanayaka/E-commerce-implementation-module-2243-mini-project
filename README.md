@@ -43,7 +43,7 @@ setup project
 
 9. change bellow if you use another one in .env file
 
-        DB_DATABASE=blog
+        DB_DATABASE=workers_yard
 
         DB_USERNAME=root
 
@@ -60,4 +60,3 @@ setup project
         php artisan serve
 
 
-All the vue files are created in "resources/js/views" folder
