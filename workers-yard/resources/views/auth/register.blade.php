@@ -31,17 +31,22 @@
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
-            <div>
+            <div class="mt-4">
                 <x-jet-label for="address" value="{{ __('Address') }}" />
                 <x-jet-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required autofocus autocomplete="address" />
             </div>
 
-            <div>
+            <div class="mt-4">
                 <x-jet-label for="tel" value="{{ __('tel') }}" />
                 <x-jet-input id="tel" class="block mt-1 w-full" type="text" name="tel" :value="old('tel')" required autofocus autocomplete="tel" />
             </div>
 
-            <div>
+            <div class="mt-4">
+
+                <x-jet-input id="role" class="block mt-1 w-full" type="hidden" name="role" :value="3" required/>
+            </div>
+
+            <div class="mt-4">
                 <x-jet-label for="gender" value="{{ __('Gender') }}" />
                 <select class="form-select" class="block mt-1 w-full" name="tel">
                     <option value="notsay">Select one</option>
