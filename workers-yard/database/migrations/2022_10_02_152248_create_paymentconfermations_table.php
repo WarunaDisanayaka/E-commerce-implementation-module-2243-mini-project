@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('paymentconfermations', function (Blueprint $table) {
             $table->id();
+            $table->string('paymentid');
+            $table->string('sellerconferm');
+            $table->string('sysconferm');
             $table->timestamps();
         });
     }
