@@ -48,7 +48,7 @@
 
             <div class="mt-4">
                 <x-jet-label for="gender" value="{{ __('Gender') }}" />
-                <select class="form-select" class="block mt-1 w-full" name="tel">
+                <select class="form-select" class="block mt-1 w-full" name="gender">
                     <option value="notsay">Select one</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>

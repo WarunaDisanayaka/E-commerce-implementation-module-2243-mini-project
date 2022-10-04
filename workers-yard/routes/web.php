@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +26,17 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
+        $role = Auth::user()->role;
+        if($role == 1){
+            return view('admin.admin');
+        }elseif ($role == 2) {
+            return view('seller.seller');
+        }elseif ($role == 3) {
+            return view('home');
+        }
+        else{
+            return view('dashboard');
+        }
         return view('dashboard');
     })->name('dashboard');
 });
