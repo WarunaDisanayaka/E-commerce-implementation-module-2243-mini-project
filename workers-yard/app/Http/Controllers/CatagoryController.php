@@ -18,6 +18,7 @@ class CatagoryController extends Controller
     public function index()
     {
         $catagories = DB::select('select * from catagories');
+        return view('admin.catagory', compact('catagories'));
     }
 
     /**
@@ -38,13 +39,18 @@ class CatagoryController extends Controller
      */
     public function store(StoreCatagoryRequest $request)
     {
+        $request->validate([
+            'catagory' => 'required',
+        ]);
+
         $catagory = new Catagory();
 
         $catagory->catagory = $request->catagory;
 
         $catagory->save();
 
-        return back();
+        return redirect()->route('catagory.index')
+            ->with('success','Category created successfully.');
     }
 
     /**
