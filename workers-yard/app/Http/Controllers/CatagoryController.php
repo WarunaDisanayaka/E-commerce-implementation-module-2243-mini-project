@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Catagory;
 use App\Http\Requests\StoreCatagoryRequest;
 use App\Http\Requests\UpdateCatagoryRequest;
+use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\DB;
 
 class CatagoryController extends Controller
 {
@@ -15,7 +17,7 @@ class CatagoryController extends Controller
      */
     public function index()
     {
-        //
+        $catagories = DB::select('select * from catagories');
     }
 
     /**
@@ -25,7 +27,7 @@ class CatagoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.createcatagory');
     }
 
     /**
@@ -36,7 +38,13 @@ class CatagoryController extends Controller
      */
     public function store(StoreCatagoryRequest $request)
     {
-        //
+        $catagory = new Catagory();
+
+        $catagory->catagory = $request->catagory;
+
+        $catagory->save();
+
+        return back();
     }
 
     /**

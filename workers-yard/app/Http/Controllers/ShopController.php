@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Shop;
+use App\Models\User;
 use App\Http\Requests\StoreShopRequest;
 use App\Http\Requests\UpdateShopRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ShopController extends Controller
 {
@@ -15,7 +18,10 @@ class ShopController extends Controller
      */
     public function index()
     {
-        //
+        $id = Auth::user()->id;
+        $shops = DB::select('select * from shops where sellerid = ?', [$id]);
+        $shopcount = DB::table('shops')->count();
+        return view('seller.shop', compact('shops','shopcount'));
     }
 
     /**
@@ -25,7 +31,7 @@ class ShopController extends Controller
      */
     public function create()
     {
-        //
+        return view('seller.createshop');
     }
 
     /**
