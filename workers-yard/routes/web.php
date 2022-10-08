@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\CatagoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,3 +42,6 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::resource('shop', ShopController::class);
+Route::resource('catagory', CatagoryController::class);
