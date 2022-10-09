@@ -17,6 +17,25 @@
                         </div>
                     @endif
                     <br><br>
+
+
+            @if ($catagories !== 0)
+            <div class="col-sm-6">
+                @foreach ($catagories as $c)
+                <form action="{{route('catagory.update', $c->id)}}" method="put">
+                    @csrf
+                    @method('PUT')
+                        <div class="mb-3 mt-3">
+                            <label for="name" class="form-label">Catagory:</label>
+                            <input type="text" class="form-control" id="catagory" value="{{$c->catagory}}" name="catagory">
+                        </div>
+
+                    <button type="submit" class="btn btn-primary">Update</button>
+                  </form>
+                  @endforeach
+            </div>
+
+            @else
             <div class="col-sm-6">
                 <form action="{{route('catagory.store')}}" method="POST">
                     @csrf
@@ -28,6 +47,7 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </form>
             </div>
+            @endif
         </div>
     </div>
 

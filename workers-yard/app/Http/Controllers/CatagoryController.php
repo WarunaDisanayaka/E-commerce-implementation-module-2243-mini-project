@@ -70,9 +70,10 @@ class CatagoryController extends Controller
      * @param  \App\Models\Catagory  $catagory
      * @return \Illuminate\Http\Response
      */
-    public function edit(Catagory $catagory)
+    public function edit($id)
     {
-        //
+        $catagories = DB::select('select * from catagories where id = ?', [$id]);
+        return view('admin.createcatagory', compact('catagories'));
     }
 
     /**
@@ -84,7 +85,13 @@ class CatagoryController extends Controller
      */
     public function update(UpdateCatagoryRequest $request, Catagory $catagory)
     {
-        //
+        $request->validate([
+            'catagory' => 'required',
+        ]);
+
+        $catagory->update($request->all());
+        return redirect()->route('catagory.index')
+            ->with('success','Category Updated successfully.');
     }
 
     /**
@@ -93,8 +100,11 @@ class CatagoryController extends Controller
      * @param  \App\Models\Catagory  $catagory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Catagory $catagory)
+    public function destroy($id)
     {
-        //
+        echo $id;
+        //$catagory->delete();
+        return redirect()->route('catagory.index')
+            ->with('success','Category deleted successfully.');
     }
 }

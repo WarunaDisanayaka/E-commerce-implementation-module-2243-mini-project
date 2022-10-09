@@ -26,7 +26,15 @@
                       <tr>
                         <td>{{$c->id}}</td>
                         <td>{{$c->catagory}}</td>
-                        <td></td>
+                        <td>
+                            <form action="{{route('catagory.destroy', $c->id)}}">
+                                <a href="{{route('catagory.edit', $c->id)}}" class="btn btn-primary">Edit</a>
+
+
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
                       </tr>
 
                         @endforeach
