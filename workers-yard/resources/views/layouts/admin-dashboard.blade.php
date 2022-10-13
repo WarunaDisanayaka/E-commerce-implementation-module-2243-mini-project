@@ -1,296 +1,191 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-        <title>Admin dashboard</title>
-	     <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-	    <!----css3---->
-        <link rel="stylesheet" href="{{asset('css/style.css')}}">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Admin Dashboard</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
 
-		<!--google fonts -->
-	    <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('bootstrap-icons/bootstrap-icons.css') }}">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="{{ asset('img/logo.png') }}" alt="">
+        <span class="d-none d-lg-block">Workers Yard</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
 
 
-	   <!--google material icon-->
-      <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
 
-  </head>
-  <body>
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
 
+        <li class="nav-item dropdown pe-3">
 
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+          </a><!-- End Profile Iamge Icon -->
 
-<div class="wrapper">
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Kevin Anderson</h6>
+              <span>Web Designer</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
 
-	  <div class="body-overlay"></div>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
 
-	 <!-------sidebar--design------------>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
 
-	 <div id="sidebar">
-	    <div class="sidebar-header">
-		   <h3><img src="" class="img-fluid"/><span>Workers Yard</span></h3>
-		</div>
-		<ul class="list-unstyled component m-0">
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
 
-		  <li class="active">
-		  <a href="#" class="dashboard"><i class="material-icons">dashboard</i>dashboard </a>
-		  </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
 
-          <li class="dropdown">
-            <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false"
-            class="dropdown-toggle">
-            <i class="material-icons">aspect_ratio</i>Layouts</a>
-            <ul class="collapse list-unstyled menu" id="homeSubmenu1">
-                <li>
-                    <a href="#">Home 1</a>
-                </li>
-                <li>
-                    <a href="#">Home 2</a>
-                </li>
-                <li>
-                    <a href="#">Home 3</a>
-                </li>
-            </ul>
-        </li>
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
 
-        <li class="dropdown">
-            <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false"
-            class="dropdown-toggle">
-            <i class="material-icons">apps</i>Widgets</a>
-            <ul class="collapse list-unstyled menu" id="homeSubmenu2">
-                <li>
-                    <a href="#">Home 1</a>
-                </li>
-                <li>
-                    <a href="#">Home 2</a>
-                </li>
-                <li>
-                    <a href="#">Home 3</a>
-                </li>
-            </ul>
-        </li>
+      </ul>
+    </nav><!-- End Icons Navigation -->
 
-        <li class="dropdown">
-            <a href="#homeSubmenu3" data-toggle="collapse" aria-expanded="false"
-            class="dropdown-toggle">
-            <i class="material-icons">equalizer</i>charts</a>
-            <ul class="collapse list-unstyled menu" id="homeSubmenu3">
-                <li>
-                    <a href="#">Home 1</a>
-                </li>
-                <li>
-                    <a href="#">Home 2</a>
-                </li>
-                <li>
-                    <a href="#">Home 3</a>
-                </li>
-            </ul>
-        </li>
+  </header><!-- End Header -->
 
-        <li class="dropdown">
-            <a href="#homeSubmenu4" data-toggle="collapse" aria-expanded="false"
-            class="dropdown-toggle">
-            <i class="material-icons">extension</i>UI Element</a>
-            <ul class="collapse list-unstyled menu" id="homeSubmenu4">
-                <li>
-                    <a href="#">Home 1</a>
-                </li>
-                <li>
-                    <a href="#">Home 2</a>
-                </li>
-                <li>
-                    <a href="#">Home 3</a>
-                </li>
-            </ul>
-        </li>
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
 
-        <li class="dropdown">
-            <a href="#homeSubmenu5" data-toggle="collapse" aria-expanded="false"
-            class="dropdown-toggle">
-            <i class="material-icons">border_color</i>forms</a>
-            <ul class="collapse list-unstyled menu" id="homeSubmenu5">
-                <li>
-                    <a href="#">Home 1</a>
-                </li>
-                <li>
-                    <a href="#">Home 2</a>
-                </li>
-                <li>
-                    <a href="#">Home 3</a>
-                </li>
-            </ul>
-        </li>
+    <ul class="sidebar-nav" id="sidebar-nav">
 
-        <li class="dropdown">
-            <a href="#homeSubmenu6" data-toggle="collapse" aria-expanded="false"
-            class="dropdown-toggle">
-            <i class="material-icons">grid_on</i>tables</a>
-            <ul class="collapse list-unstyled menu" id="homeSubmenu6">
-                <li>
-                    <a href="#">Home 1</a>
-                </li>
-                <li>
-                    <a href="#">Home 2</a>
-                </li>
-                <li>
-                    <a href="#">Home 3</a>
-                </li>
-            </ul>
-        </li>
+      <li class="nav-item">
+        <a class="nav-link " href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
 
-        <li class="dropdown">
-            <a href="#homeSubmenu7" data-toggle="collapse" aria-expanded="false"
-            class="dropdown-toggle">
-            <i class="material-icons">content_copy</i>Pages</a>
-            <ul class="collapse list-unstyled menu" id="homeSubmenu7">
-                <li>
-                    <a href="#">Home 1</a>
-                </li>
-                <li>
-                    <a href="#">Home 2</a>
-                </li>
-                <li>
-                    <a href="#">Home 3</a>
-                </li>
-            </ul>
-        </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Modal</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Tabs</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Pagination</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Components Nav -->
+    </ul>
 
-        <li class="">
-            <a href="#" class="dashboard"><i class="material-icons">date_range</i>copy </a>
-        </li>
+  </aside><!-- End Sidebar-->
 
-        <li class="">
-            <a href="#" class="dashboard"><i class="material-icons">library_books</i>calendar</a>
-        </li>
+  <main id="main" class="main">
 
-		</ul>
-	 </div>
+    <div class="pagetitle">
+      <h1>Dashboard</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+      </nav>
+    </div>
 
-     <!--Page content start-->
-     <div id="content">
+    <section class="section dashboard">
+      <div class="row">
+        <div class="col-lg-8">
 
-        <div class="top-navbar">
-            <div class="xp-topbar">
-                <div class="row">
-                    <div class="col-2 col-md-1 col-lg-1 order-2 order-md-1 align-self-center">
-                        <div class="xp-menubar">
-                            <span class="material-icons text-white">signal_cellular_alt</span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-5 col-lg-3 order-3 order-md-2">
-                        <div class="xp-searchbar">
-                            <form action="">
-                                <div class="input-group">
-                                    <input type="search" class="form-control" placeholder="Search">
-                                    <div class="input-group-append">
-                                        <button class="btn" type="submit" id="button-addon2">Go</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="col-10 col-md-6 col-lg-8 order-1 order-md-3">
-                        <div class="xp-profilebar text-right">
-                            <nav class="navbar p-0">
-                                <ul class="nav navbar-nav flex-row ml-auto">
-                                    <li class="dropdown nav-item active">
-                                        <a href="#" class="nav-link" data-toggle="dropdown">
-                                            <span class="material-icons">notifications</span>
-                                            <span class="notification">4</span>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="">You Have 4 New Messages</a></li>
-                                            <li><a href="">You Have 4 New Messages</a></li>
-                                            <li><a href="">You Have 4 New Messages</a></li>
-                                            <li><a href="">You Have 4 New Messages</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <span class="material-icons">question_answer</span>
-                                        </a>
-                                    </li>
-
-                                    <li class="nav-item dropdown">
-                                        <a href="#" class="nav-link" data-toggle="dropdown">
-                                           <img src="{{ asset('img/user.jpg') }}" alt="" style="width:40px; border-radius:50%;">
-                                            <span class="xp-user-live"></span>
-                                        </a>
-                                        <ul class="dropdown-menu small-menu">
-
-                                            <li><a href="#"><span class="material-icons">person_outline</span>
-                                                Profile
-                                            </a></li>
-
-                                            <li><a href="#"><span class="material-icons">settings</span>
-                                                Settings
-                                            </a></li>
-
-                                            <li><a href="#"><span class="material-icons">logout</span>
-                                                Logout
-                                            </a></li>
-
-                                        </ul>
-                                    </li>
-
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
         </div>
+      </div>
+    </section>
 
-     </div>
-
-</div>
-
-
+  </main><!-- End #main -->
 
 
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 
+   <!-- Vendor JS Files -->
+   <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
 
-     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-   <script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}"></script>
-   <script src="{{ asset('js/popper.min.js') }}"></script>
-   <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-   <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="{{ asset('js/main.js') }}"></script>
 
+</body>
 
-  <script type="text/javascript">
-       $(document).ready(function(){
-	      $(".xp-menubar").on('click',function(){
-		    $("#sidebar").toggleClass('active');
-			$("#content").toggleClass('active');
-		  });
-
-		  $('.xp-menubar,.body-overlay').on('click',function(){
-		     $("#sidebar,.body-overlay").toggleClass('show-nav');
-		  });
-
-	   });
-  </script>
-
-
-
-
-
-  </body>
-
-  </html>
-
-
+</html>
