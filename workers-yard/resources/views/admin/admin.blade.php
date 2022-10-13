@@ -1,1 +1,1 @@
-@extends('layouts.admin-dashboard')
+<h1>admin</h1>

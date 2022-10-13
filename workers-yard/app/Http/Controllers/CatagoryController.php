@@ -18,7 +18,6 @@ class CatagoryController extends Controller
     public function index()
     {
         $catagories = DB::select('select * from catagories');
-        return view('admin.catagory', compact('catagories'));
     }
 
     /**
@@ -39,18 +38,13 @@ class CatagoryController extends Controller
      */
     public function store(StoreCatagoryRequest $request)
     {
-        $request->validate([
-            'catagory' => 'required',
-        ]);
-
         $catagory = new Catagory();
 
         $catagory->catagory = $request->catagory;
 
         $catagory->save();
 
-        return redirect()->route('catagory.index')
-            ->with('success','Category created successfully.');
+        return back();
     }
 
     /**
@@ -70,10 +64,9 @@ class CatagoryController extends Controller
      * @param  \App\Models\Catagory  $catagory
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Catagory $catagory)
     {
-        $catagories = DB::select('select * from catagories where id = ?', [$id]);
-        return view('admin.createcatagory', compact('catagories'));
+        //
     }
 
     /**
@@ -85,13 +78,7 @@ class CatagoryController extends Controller
      */
     public function update(UpdateCatagoryRequest $request, Catagory $catagory)
     {
-        $request->validate([
-            'catagory' => 'required',
-        ]);
-
-        $catagory->update($request->all());
-        return redirect()->route('catagory.index')
-            ->with('success','Category Updated successfully.');
+        //
     }
 
     /**
@@ -100,11 +87,8 @@ class CatagoryController extends Controller
      * @param  \App\Models\Catagory  $catagory
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Catagory $catagory)
     {
-        echo $id;
-        //$catagory->delete();
-        return redirect()->route('catagory.index')
-            ->with('success','Category deleted successfully.');
+        //
     }
 }

@@ -1,22 +1,9 @@
 @extends('layouts.seller')
 
 @section('content')
-<br><br>
 
     <div class="container-fluid">
         <div class="row">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-            <br>
-            <br>
             <div class="col-sm-12">
 
                 <form action="{{route('shop.store')}}" method="post" enctype="multipart/form-data">
