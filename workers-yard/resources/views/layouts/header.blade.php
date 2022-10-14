@@ -54,7 +54,7 @@
                 <a href="#" class="nav-link m-2 menu-item">Price Plan</a>
             </li>
             <li class="nav-item user-account">
-                <a href="#" class="nav-link m-2 menu-item" data-toggle="modal" data-target="#basicExampleModal">Account</a>
+                <a href="#" class="nav-link m-2 menu-item" data-toggle="modal" data-target="#basicExampleModal">Acc</a>
                 <box-icon name='user' class="user-icon"></box-icon>
             </li>
         </ul>
