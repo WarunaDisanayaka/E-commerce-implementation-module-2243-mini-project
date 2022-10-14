@@ -31,7 +31,8 @@ class ShopController extends Controller
      */
     public function create()
     {
-        return view('seller.createshop');
+        $catagory = DB::select('select * from catagories');
+        return view('seller.createshop', compact('catagory'));
     }
 
     /**
@@ -42,7 +43,29 @@ class ShopController extends Controller
      */
     public function store(StoreShopRequest $request)
     {
-        //
+        $request->validate([
+            'sname' => 'required|max:255',
+            'scatagory' => 'required|max:255',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:204800',
+            'sdis' => 'required|max:5000'
+        ]);
+
+        $imageName = time().'.'.$request->image->extension();
+
+        $request->image->move(public_path('images'), $imageName);
+
+        $seller = Auth::user()->id;
+
+        $shop = new Shop();
+        $shop->shopname = $request->sname;
+        $shop->shopcatagory = $request->scatagory;
+        $shop->bannerimage = $imageName;
+        $shop->shopdescription = $request->sdis;
+        $shop->sellerid = $seller;
+        $shop->save();
+
+        return redirect()->route('shop.index')
+            ->with('success','Your shop created successfully.');
     }
 
     /**

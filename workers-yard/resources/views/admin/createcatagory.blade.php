@@ -19,12 +19,12 @@
                     <br><br>
 
 
-            @if ($catagories !== 0)
+            @if (isset($catagory))
             <div class="col-sm-6">
                 @foreach ($catagories as $c)
-                <form action="{{route('catagory.update', $c->id)}}" method="put">
+                <form action="{{route('catagory.update', $c->id)}}" method="POST">
                     @csrf
-                    @method('PUT')
+                    @method("PUT")
                         <div class="mb-3 mt-3">
                             <label for="name" class="form-label">Catagory:</label>
                             <input type="text" class="form-control" id="catagory" value="{{$c->catagory}}" name="catagory">

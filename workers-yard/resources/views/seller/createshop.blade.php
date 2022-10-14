@@ -3,7 +3,7 @@
 @section('content')
 <br><br>
 
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -17,9 +17,10 @@
             @endif
             <br>
             <br>
-            <div class="col-sm-12">
+            <div class="col-sm-6">
 
                 <form action="{{route('shop.store')}}" method="post" enctype="multipart/form-data">
+                    @csrf
 
                     <div class="mb-3 mt-3">
                       <label for="name" class="form-label">Shop Name:</label>
@@ -28,12 +29,17 @@
 
                     <div class="mb-3 mt-3">
                         <label for="scatagory" class="form-label">Shop Catagory:</label>
-                        <input type="text" class="form-control" id="scatagory" placeholder="Enter Shop catagory" name="scatagory">
+                        <select class="form-select" name="scatagory">
+                            <option>---- Select Catagory ----</option>
+                            @foreach ($catagory as $c)
+                                <option value="{{$c->catagory}}">{{$c->catagory}}</option>
+                            @endforeach
+                          </select>
                       </div>
 
                     <div class="mb-3 mt-3">
                         <label for="image" class="form-label">Select the banner image:</label>
-                        <input type="file" class="form-control" id="bimg" name="bimg">
+                        <input type="file" class="form-control" id="bimg" name="image">
                     </div>
 
                     <div class="mb-3 mt-3">

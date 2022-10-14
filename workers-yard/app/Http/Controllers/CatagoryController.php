@@ -100,10 +100,10 @@ class CatagoryController extends Controller
      * @param  \App\Models\Catagory  $catagory
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Catagory $catagory)
     {
-        echo $id;
-        //$catagory->delete();
+        $catagory->delete();
+
         return redirect()->route('catagory.index')
             ->with('success','Category deleted successfully.');
     }
