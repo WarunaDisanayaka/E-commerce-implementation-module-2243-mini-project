@@ -13,10 +13,13 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
     <!--Link CSS-->
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
-    
+
 
 
 
@@ -53,11 +56,31 @@
             <li class="nav-item">
                 <a href="#" class="nav-link m-2 menu-item">Price Plan</a>
             </li>
-            <li class="nav-item user-account">
-                <a href="#" class="nav-link m-2 menu-item" data-toggle="modal" data-target="#basicExampleModal">Acc</a>
+            <li class="nav-item dropdown user-account">
+                @if (Route::has('login'))
+                <a href="#" class="nav-link dropdown-toggle m-2 menu-item" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Acc</a>
                 <box-icon name='user' class="user-icon"></box-icon>
+                @auth
+                <!--
+                    <a href="{{ url('/dashboard') }}">Dash</a>
+                    <box-icon name='user' class="user-icon"></box-icon>
+                -->
+                @else
+                <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+
+                    <li><a class="dropdown-item" href="{{ route('login') }}">Log in</a></li>
+                    @if (Route::has('register'))
+                        <li><a class="dropdown-item" href="{{ route('register') }}">Register</a></li>
+                    @endif
+                @endauth
+
+                  </ul>
+            @endif
+
             </li>
         </ul>
     </div>
 </nav>
+
+
 <!-- End Of Navigation -->
