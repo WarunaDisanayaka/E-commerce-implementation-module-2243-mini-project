@@ -28,7 +28,7 @@
   <body>
 
 <!--Navigation Menu-->
-<nav class="navbar navbar-expand-lg navbar-light ">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light ">
     <div class="d-flex flex-grow-1">
         <span class="w-100 d-lg-none d-block">
             <!-- hidden spacer to center brand on mobile --></span>
@@ -59,7 +59,7 @@
             <li class="nav-item dropdown user-account">
                 @if (Route::has('login'))
                 <a href="#" class="nav-link dropdown-toggle m-2 menu-item" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Acc</a>
-                <box-icon name='user' class="user-icon"></box-icon>
+                <box-icon name='user' class="user-icon" color="#ffffff"></box-icon>
                 @auth
                 <!--
                     <a href="{{ url('/dashboard') }}">Dash</a>
@@ -80,7 +80,23 @@
             </li>
         </ul>
     </div>
+
 </nav>
-
-
 <!-- End Of Navigation -->
+
+
+<!--Banner Image-->
+<div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center">
+    <div class="line">
+    </div>
+    <div class="container titles">
+        <div class="row">
+            <div class="d-flex justify-content-center title-one">
+                <h5>Order any service, anytime from anywhere</h5>
+            </div>
+            <div class="d-flex justify-content-center title-two">
+                <h1>ONE-STOP SOLUTION <br> FOR YOUR SERVICES</h1>
+            </div>
+        </div>
+    </div>
+</div>
