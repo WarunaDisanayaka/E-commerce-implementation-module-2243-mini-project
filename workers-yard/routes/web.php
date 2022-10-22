@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\CatagoryController;
+use App\Http\Controllers\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,3 +48,7 @@ Route::middleware([
 
 Route::resource('shop', ShopController::class);
 Route::resource('catagory', CatagoryController::class);
+Route::resource('service', ServiceController::class);
+
+
+//Route::get('service', [ServiceController::class, 'create']);
