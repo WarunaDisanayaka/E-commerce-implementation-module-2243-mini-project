@@ -25,11 +25,21 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $id = Auth::user()->id;
-        $shops = DB::select('select * from shops where sellerid = ?', [$id]);
+       
+       
+    }
+
+
+    public function shopname(){
+         //  $id = Auth::user()->id;
+         $id=1;
+         $shops = DB::select('select shopname from shops where sellerid = ?', [$id]);
+
+        return $shops;
     }
 
     /**
+    
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -48,7 +58,7 @@ class ServiceController extends Controller
      */
     public function store(StoreserviceRequest $request)
     {
-        $id='avishka';
+        $id=shopname();
         $service=new service();
         $service->servicename=$request->name;
         $service->servicedescription=$request->discription;
