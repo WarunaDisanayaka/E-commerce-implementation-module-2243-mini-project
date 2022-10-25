@@ -3,8 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\service;
+
+use App\Models\Request;
 use App\Http\Requests\StoreserviceRequest;
 use App\Http\Requests\UpdateserviceRequest;
+
+use App\Models\Shop;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
+
+
 
 class ServiceController extends Controller
 {
@@ -15,7 +25,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        
+        $id = Auth::user()->id;
+        $shops = DB::select('select * from shops where sellerid = ?', [$id]);
     }
 
     /**
@@ -28,6 +39,7 @@ class ServiceController extends Controller
         return view('seller.addservice');
     }
 
+ 
     /**
      * Store a newly created resource in storage.
      *
@@ -36,7 +48,18 @@ class ServiceController extends Controller
      */
     public function store(StoreserviceRequest $request)
     {
-        //
+        $id='avishka';
+        $service=new service();
+        $service->servicename=$request->name;
+        $service->servicedescription=$request->discription;
+        $service->shopid= $id;
+        $service->price=$request->price;
+        $service->serviceimage= $id;
+
+        $service->save();
+
+        return back();
+
     }
 
     /**
