@@ -18,11 +18,7 @@
 
     <!--Link CSS-->
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-
-
-
-
-
+    
     <title>Welcome to Workers Yard</title>
   </head>
   <body>
@@ -97,6 +93,21 @@
             <div class="d-flex justify-content-center title-two">
                 <h1>ONE-STOP SOLUTION <br> FOR YOUR SERVICES</h1>
             </div>
+        </div>
+        <div class="row">
+            <div class="row height d-flex justify-content-center align-items-center">
+
+                <div class="col-md-8">
+
+                  <div class="search">
+                    <i class="fa fa-search"></i>
+                    <input type="text" class="form-control" placeholder="What are you looking for?">
+                    <button class="btn btn-primary">Search</button>
+                  </div>
+                  
+                </div>
+                
+              </div>
         </div>
     </div>
 </div>

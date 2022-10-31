@@ -76,3 +76,53 @@ body{
     font-weight: 700;
     font-size: 80px;
 }
+
+/*SEARCH BAR CSS*/
+
+.search {
+    position: relative;
+    margin-top: 5rem;
+}
+
+.search input{
+    height: 60px;
+    text-indent: 25px;
+}
+
+.search .input:focus{
+    box-shadow: none;
+    border: 2px solid #1dbf73;
+}
+
+.search .fa-search{
+    position: absolute;
+    top: 20px;
+    left: 16px;
+}
+
+.search button{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 50px;
+    width: 110px;
+    background: #1dbf73;
+}
+
+.search button:hover{
+    background: grey;
+}
+
+/*Browse Categories*/
+
+.browse-categories{
+    margin-top: 4rem;
+}
+
+.browse-categories .main-title{
+    font-weight: bold;
+}
+
+.browse-categories .main-title .second-title{
+    color: #1dbf73;
+}

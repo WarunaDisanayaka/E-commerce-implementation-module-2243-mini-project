@@ -1,19 +1,19 @@
-@extends('layouts.header')
+@include('layouts.header')
+
+    <!--Browse Categories Title-->
+    <div class="container browse-categories">
+        <div class="row">
+            <h2 class="text-center main-title">Browse <span class="second-title">Categories</span></h2>
+        </div>
+        <div class="row">
+            <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, 
+                obcaecati aspernatur harum non dolore libero alias dicta nostrum fugiat recusandae iusto laborum,
+                 iste reprehenderit? Accusamus laudantium enim incidunt deserunt quibusdam!</p>
+        </div>
+    </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
