@@ -126,3 +126,24 @@ body{
 .browse-categories .main-title .second-title{
     color: #1dbf73;
 }
+
+/*Browse Categories Cards*/
+
+.categories .button{
+    width: 5px;
+    height: 5px;
+}
+
+.categories-card .cat-card{
+    height: 217px;
+    width: 197px;
+    background: #1dbf73;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    display: inline-flex;
+}
+
+.categories-card .cat-card .cat-title{
+    margin: 5rem 0rem 0rem 1rem;
+}
+
