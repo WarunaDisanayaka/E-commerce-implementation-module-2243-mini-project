@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\DB;
 
 
 
+
 class ServiceController extends Controller
 {
     /**
@@ -25,17 +26,18 @@ class ServiceController extends Controller
      */
     public function index()
     {
-       
+        $id=1;
+        $shops = DB::select('select shopname from shops where sellerid = ?', [$id]);
+        return $shops;
        
     }
 
 
-    public function shopname(){
-         //  $id = Auth::user()->id;
-         $id=1;
-         $shops = DB::select('select shopname from shops where sellerid = ?', [$id]);
-
+    public function test(){
+        $id=1;
+        $shops = DB::select('select shopname from shops where sellerid = ?', [$id]);
         return $shops;
+         
     }
 
     /**
@@ -46,6 +48,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
+        
         return view('seller.addservice');
     }
 
@@ -58,17 +61,22 @@ class ServiceController extends Controller
      */
     public function store(StoreserviceRequest $request)
     {
-        $id=shopname();
-        $service=new service();
-        $service->servicename=$request->name;
-        $service->servicedescription=$request->discription;
-        $service->shopid= $id;
-        $service->price=$request->price;
-        $service->serviceimage= $id;
 
-        $service->save();
+        $id= Auth::user()->id;
+        $shops = DB::select('select shopname from shops where sellerid = ?', [$id]);
+        $id2 = $shops[0]->shopname;
 
-        return back();
+        return $id2;
+        // $service=new service();
+        // $service->servicename=$request->name;
+        // $service->servicedescription=$request->discription;
+        // $service->shopid= $id;
+        // $service->price=$request->price;
+        // $service->serviceimage= $id;
+
+        // $service->save();
+
+        // return back();
 
     }
 
