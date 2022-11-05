@@ -22,6 +22,7 @@ body{
 }
 
 .navbar .navbar-brand{
+    color: white;
     margin-left: 2rem;
 }
 
@@ -186,4 +187,39 @@ body{
 
 .categories .card-body#card6{
     background: #0fc393;
+}
+
+
+/*Gig */
+
+.gig{
+    margin-top: 8rem;
+}
+
+.gig .main-title{
+    font-weight: bold;
+}
+
+.gig .main-title .second-title{
+    color: #1dbf73;
+}
+
+
+
+/*Featured Services*/
+.featured-service{
+    margin-top: 2rem;
+}
+
+.featured-service .col-1{
+    margin: 5rem;
+}
+
+.featured-service .card-body h5{
+    font-weight: 600;
+}
+
+.featured-service .card-body button{
+    font-weight: 600;
+    background: #1dbf73;
 }
