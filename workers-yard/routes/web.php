@@ -22,6 +22,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('gig',function(){
+    return view('gig');
+});
 
 
 Route::middleware([

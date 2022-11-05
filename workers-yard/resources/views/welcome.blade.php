@@ -1,5 +1,38 @@
 @include('layouts.header')
 
+<!--Banner Image-->
+<div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center">
+    <div class="line">
+    </div>
+    <div class="container titles">
+        <div class="row">
+            <div class="d-flex justify-content-center title-one">
+                <h5>Order any service, anytime from anywhere</h5>
+            </div>
+            <div class="d-flex justify-content-center title-two">
+                <h1>ONE-STOP SOLUTION <br> FOR YOUR SERVICES</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row height d-flex justify-content-center align-items-center">
+
+                <div class="col-md-8">
+
+                  <div class="search">
+                    <i class="fa fa-search"></i>
+                    <input type="text" class="form-control" placeholder="What are you looking for?">
+                    <button class="btn btn-primary">Search</button>
+                  </div>
+
+                </div>
+
+              </div>
+        </div>
+    </div>
+</div>
+
+
+
     <!--Browse Categories Title-->
     <div class="container browse-categories">
         <div class="row">
@@ -92,7 +125,8 @@
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <button class="btn btn-primary">Book Now</button>
+                      <button class="btn btn-primary"><a href="{{ url('gig') }}">Book Now</a></button>
+
                     </div>
                   </div>
             </div>
