@@ -223,3 +223,22 @@ body{
     font-weight: 600;
     background: #1dbf73;
 }
+
+/*Gig Navbar*/
+.navbar-gig{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 70px;
+    background: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.navbar-gig .navbar-brand{
+    color: black;
+}
+
+.navbar-gig ul li a{
+    color: black !important;
+}
+
