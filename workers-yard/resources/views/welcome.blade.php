@@ -124,6 +124,7 @@
 
     </section>
 
+@include('layouts.footer')
 
 
     <!--OWL Carousel CDN-->
