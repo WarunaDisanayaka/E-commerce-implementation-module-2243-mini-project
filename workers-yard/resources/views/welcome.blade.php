@@ -6,116 +6,68 @@
             <h2 class="text-center main-title">Browse <span class="second-title">Categories</span></h2>
         </div>
         <div class="row">
-            <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, 
+            <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad,
                 obcaecati aspernatur harum non dolore libero alias dicta nostrum fugiat recusandae iusto laborum,
                  iste reprehenderit? Accusamus laudantium enim incidunt deserunt quibusdam!</p>
         </div>
     </div>
 
     <!--Browse Categories Cards-->
-    <section class="categories d-flex justify-content-center">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active categories-card">
-                <div class="cat-card">
-                    <div class="cat-icon d-flex justify-content-center">
-                        <box-icon type='solid' name='plug'></box-icon>
+    <section class="categories">
+        <div class="container">
+            <div class="row">
+              <div class="col-3">
+                <div class="card-body" id="card1">
+                    <div class="icon">
+                        <i class="fa-solid fa-plug"></i>
                     </div>
-                    <div class="cat-title">
-                        <h3>Electronics</h3>
-                    </div>
+                    <h4 class="font-weight-bold">Electronic</h4>
                 </div>
-
-                <div class="cat-card">
-                    <div class="cat-icon d-flex justify-content-center">
-                        <box-icon type='solid' name='plug'></box-icon>
-                    </div>
-                    <div class="cat-title">
-                        <h3>Electronics</h3>
-                    </div>
-                </div>
-
-                <div class="cat-card">
-                    <div class="cat-icon d-flex justify-content-center">
-                        <box-icon type='solid' name='plug'></box-icon>
-                    </div>
-                    <div class="cat-title">
-                        <h3>Electronics</h3>
-                    </div>
-                </div>
-
-                <div class="cat-card">
-                    <div class="cat-icon d-flex justify-content-center">
-                        <box-icon type='solid' name='plug'></box-icon>
-                    </div>
-                    <div class="cat-title">
-                        <h3>Electronics</h3>
-                    </div>
-                </div>
-
-                <div class="cat-card">
-                    <div class="cat-icon d-flex justify-content-center">
-                        <box-icon type='solid' name='plug'></box-icon>
-                    </div>
-                    <div class="cat-title">
-                        <h3>Electronics</h3>
-                    </div>
-                </div>
-                
               </div>
-
-              <div class="carousel-item categories-card">
-                <div class="cat-card">
-                    <div class="cat-icon d-flex justify-content-center">
-                        <box-icon type='solid' name='plug'></box-icon>
+              <div class="col-3">
+                <div class="card-body" id="card2">
+                    <div class="icon">
+                        <i class="fa-solid fa-broom"></i>
                     </div>
-                    <div class="cat-title">
-                        <h3>Electronics</h3>
-                    </div>
+                    <h4 class="font-weight-bold">Electronic</h4>
                 </div>
-
-                <div class="cat-card">
-                    <div class="cat-icon d-flex justify-content-center">
-                        <box-icon type='solid' name='plug'></box-icon>
+              </div>
+              <div class="col-3">
+                <div class="card-body" id="card3">
+                    <div class="icon">
+                        <i class="fa-solid fa-paint-roller"></i>
                     </div>
-                    <div class="cat-title">
-                        <h3>Electronics</h3>
-                    </div>
+                    <h4 class="font-weight-bold">Electronic</h4>
                 </div>
-
-                <div class="cat-card">
-                    <div class="cat-icon d-flex justify-content-center">
-                        <box-icon type='solid' name='plug'></box-icon>
-                    </div>
-                    <div class="cat-title">
-                        <h3>Electronics</h3>
-                    </div>
-                </div>
-
-                <div class="cat-card">
-                    <div class="cat-icon d-flex justify-content-center">
-                        <box-icon type='solid' name='plug'></box-icon>
-                    </div>
-                    <div class="cat-title">
-                        <h3>Electronics</h3>
-                    </div>
-                </div>
-
-                <div class="cat-card">
-                    <div class="cat-icon d-flex justify-content-center">
-                        <box-icon type='solid' name='plug'></box-icon>
-                    </div>
-                    <div class="cat-title">
-                        <h3>Electronics</h3>
-                    </div>
-                </div>
-                
               </div>
             </div>
+
+            <div class="row">
+                <div class="col-3">
+                  <div class="card-body" id="card4">
+                      <div class="icon">
+                        <i class="fa-solid fa-house-chimney"></i>
+                      </div>
+                      <h4 class="font-weight-bold">Electronic</h4>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="card-body" id="card5">
+                      <div class="icon">
+                        <i class="fa-sharp fa-solid fa-closed-captioning"></i>
+                      </div>
+                      <h4 class="font-weight-bold">Electronic</h4>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="card-body" id="card6">
+                      <div class="icon">
+                        <i class="fa-solid fa-scissors"></i>
+                      </div>
+                      <h4 class="font-weight-bold">Electronic</h4>
+                  </div>
+                </div>
+              </div>
           </div>
     </section>
 

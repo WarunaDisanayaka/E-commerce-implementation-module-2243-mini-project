@@ -128,22 +128,57 @@ body{
 }
 
 /*Browse Categories Cards*/
-
-.categories .button{
-    width: 5px;
-    height: 5px;
+.categories{
+    margin-left: 20%;
 }
 
-.categories-card .cat-card{
-    height: 217px;
-    width: 197px;
-    background: #1dbf73;
-    border-radius: 0.5rem;
+.categories .row{
+    margin: 2rem;
+}
+
+.categories .col{
     margin: 1rem;
-    display: inline-flex;
 }
 
-.categories-card .cat-card .cat-title{
-    margin: 5rem 0rem 0rem 1rem;
+.categories .card-body{
+    width: 197px;
+    height: 216px;
+    border-radius: 1rem;
 }
 
+.categories .card-body .icon{
+    color: white;
+    font-size: 50px;
+    margin-top: 2rem;
+    margin-left: 3.5rem;
+}
+
+.categories .card-body h4{
+    margin-left: 1.5rem;
+    color: white;
+    font-weight: 600;
+}
+
+.categories .card-body#card1{
+    background: #1dbf73;
+}
+
+.categories .card-body#card2{
+    background: #378fff;
+}
+
+.categories .card-body#card3{
+    background: #c71f66;
+}
+
+.categories .card-body#card4{
+    background: #be3eff;
+}
+
+.categories .card-body#card5{
+    background: #f86048;
+}
+
+.categories .card-body#card6{
+    background: #0fc393;
+}
