@@ -73,7 +73,7 @@ class CatagoryController extends Controller
     public function edit($id)
     {
         $catagories = DB::select('select * from catagories where id = ?', [$id]);
-        return view('admin.createcatagory', compact('catagories'));
+        return view('admin.catagoryedit', compact('catagories'));
     }
 
     /**

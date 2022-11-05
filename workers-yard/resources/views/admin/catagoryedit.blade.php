@@ -19,7 +19,7 @@
                     <br><br>
 
 
-            @if (isset($catagory))
+
             <div class="col-sm-6">
                 @foreach ($catagories as $c)
                 <form action="{{route('catagory.update', $c->id)}}" method="POST">
@@ -35,19 +35,7 @@
                   @endforeach
             </div>
 
-            @else
-            <div class="col-sm-6">
-                <form action="{{route('catagory.store')}}" method="POST">
-                    @csrf
-                    <div class="mb-3 mt-3">
-                      <label for="name" class="form-label">Catagory:</label>
-                      <input type="text" class="form-control" id="catagory" placeholder="Enter Catagory" name="catagory">
-                    </div>
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
-            </div>
-            @endif
         </div>
     </div>
 
