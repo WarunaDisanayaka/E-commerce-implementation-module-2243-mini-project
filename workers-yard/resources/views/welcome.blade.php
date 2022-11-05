@@ -72,6 +72,59 @@
     </section>
 
 
+    <!--Featured Service Section-->
+    <div class="container gig">
+        <div class="row">
+            <h2 class="text-center main-title">Featured <span class="second-title">Services</span></h2>
+        </div>
+        <div class="row">
+            <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad,
+                obcaecati aspernatur harum non dolore libero alias dicta nostrum fugiat recusandae iusto laborum,
+                 iste reprehenderit? Accusamus laudantium enim incidunt deserunt quibusdam!</p>
+        </div>
+    </div>
+
+    <section class="container featured-service">
+        <div class="row">
+            <div class="col-4">
+                <div class="card" style="width: 349px;">
+                    <img src="{{ asset('img/gigimg1.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <button class="btn btn-primary">Book Now</button>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card" style="width: 349px;">
+                    <img src="{{ asset('img/gigimg1.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <button class="btn btn-primary">Book Now</button>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card" style="width: 349px;">
+                    <img src="{{ asset('img/gigimg1.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <button class="btn btn-primary">Book Now</button>
+                    </div>
+                  </div>
+            </div>
+
+        </div>
+
+
+    </section>
+
+
 
     <!--OWL Carousel CDN-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
