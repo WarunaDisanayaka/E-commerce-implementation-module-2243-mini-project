@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\DB;
 
 
 
+
 class ServiceController extends Controller
 {
     /**
@@ -58,7 +59,7 @@ class ServiceController extends Controller
      */
     public function store(StoreserviceRequest $request)
     {
-        $id=shopname();
+        $id=new Shop();
         $service=new service();
         $service->servicename=$request->name;
         $service->servicedescription=$request->discription;
