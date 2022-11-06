@@ -15,7 +15,7 @@ class OrderconfermationController extends Controller
      */
     public function index()
     {
-        //
+        return view('user.serviceform');
     }
 
     /**
