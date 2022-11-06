@@ -178,6 +178,11 @@
                   <i class="bi bi-circle"></i><span>View Shop</span>
                 </a>
               </li>
+              <li>
+                <a href="{{route('service.create')}}">
+                  <i class="bi bi-circle"></i><span>Add Service</span>
+                </a>
+              </li>
 
             </ul>
           </li><!-- End Components Nav -->

@@ -17,9 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('servicename');
             $table->string('shopid');
-            $table->string('servicedescription');
+            $table->text('servicedescription');
             $table->string('serviceimage');
             $table->string('price');
+            $table->string('includeservice');
+            $table->string('revision')->nullable();
+            $table->string('diliverydates')->nullable();
             $table->timestamps();
         });
     }
