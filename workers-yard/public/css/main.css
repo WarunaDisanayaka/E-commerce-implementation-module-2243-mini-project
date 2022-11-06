@@ -242,3 +242,71 @@ body{
     color: black !important;
 }
 
+
+/*Breadcrum*/
+
+.gig-breadcrum{
+    margin: 0;
+    padding: 0;
+    height: 157px;
+    background: #f1f6ff;
+}
+
+.gig-breadcrum .content{
+    position: relative;
+    margin-top: 3%;
+}
+
+.gig-breadcrum .content .gig-title h3{
+    font-weight: bold;
+}
+
+/*Gig Description*/
+
+.gig-description .gig-details .seller-data{
+    display: flex;
+}
+
+.gig-description .gig-details .seller-data img{
+    width: 50px;
+    height: 50px;
+}
+
+.gig-description .gig-details .seller-data h5{
+    margin-left: 1rem;
+    font-size: 14px;
+}
+
+.gig-description .gig-details .gig-tab .tab-content{
+    margin-left: 1rem;
+}
+
+.gig-description .gig-details .gig-tab .tab-content .title-list h4{
+    font-weight: bold;
+}
+
+.gig-description .gig-details .gig-tab .tab-content ul li{
+    list-style: none;
+}
+
+.gig-description .gig-details .gig-tab .tab-content ul li::before{
+    content: "\2022";
+    color: #0fc393;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+
+}
+
+/* Package */
+.gig-package .package{
+    padding: 30px;
+    border: 1px solid rgba(221,221,221,.5);
+    border-radius: 10px;
+}
+
+.gig-package .package .package-name{
+    display: flex;
+    justify-content: space-between;
+}
