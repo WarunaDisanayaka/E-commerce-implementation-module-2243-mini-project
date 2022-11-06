@@ -58,6 +58,8 @@ Route::resource('adminshop', AdminshopController::class);
 
 
 Route::resource('serviceform',OrderconfermationController::class);
+
+
 //Route::view('add','seller.addservice');
 //Route::post('add', [ServiceController::class, 'store']);
 

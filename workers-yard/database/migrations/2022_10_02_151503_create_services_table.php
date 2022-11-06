@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('serviceimage');
             $table->string('price');
             $table->string('includeservice');
-            $table->string('revision');
-            $table->string('diliverydates');
+            $table->string('revision')->nullable();
+            $table->string('diliverydates')->nullable();
             $table->timestamps();
         });
     }

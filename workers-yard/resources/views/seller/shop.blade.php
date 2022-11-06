@@ -51,7 +51,7 @@
 
                     <div class="row">
 
-                        <a href="" class="btn btn-primary">Add Service</a>
+                        <a href="{{route('service.create')}}" class="btn btn-primary">Add Service</a>
 
                         <div class="col-sm-12">
 
