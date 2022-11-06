@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminshopController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -49,6 +50,7 @@ Route::middleware([
 Route::resource('shop', ShopController::class);
 Route::resource('catagory', CatagoryController::class);
 Route::resource('service', ServiceController::class);
+Route::resource('adminshop', AdminshopController::class);
 
 //Route::view('add','seller.addservice');
 //Route::post('add', [ServiceController::class, 'store']);

@@ -14,9 +14,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 
-
-
-
 class ServiceController extends Controller
 {
     /**
@@ -26,8 +23,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-       
-       
+
+
     }
 
 
@@ -40,7 +37,7 @@ class ServiceController extends Controller
     }
 
     /**
-    
+
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -50,7 +47,7 @@ class ServiceController extends Controller
         return view('seller.addservice');
     }
 
- 
+
     /**
      * Store a newly created resource in storage.
      *
@@ -59,18 +56,29 @@ class ServiceController extends Controller
      */
     public function store(StoreserviceRequest $request)
     {
-        $id=new Shop();
-        $service=new service();
-        $service->servicename=$request->name;
-        $service->servicedescription=$request->discription;
-        $service->shopid= $id;
-        $service->price=$request->price;
-        $service->serviceimage= $id;
+        $request->validate([
+            'servicename' => 'required|max:255',
+            'servicedescription' => 'required|max:5000',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:204800',
+            'price' => 'required|max:255'
+        ]);
+
+        $imageName = time().'.'.$request->image->extension();
+
+        $request->image->move(public_path('images'), $imageName);
+
+        $service = new service();
+
+        $service->servicename = $request->servicename;
+        $service->shopid = 1;
+        $service->servicedescription = $request->servicedescription;
+        $service->serviceimage = $imageName;
+        $service->price = $request->price;
 
         $service->save();
 
-        return back();
-
+        return redirect()->route('shop.index')
+            ->with('success','Your Service created successfully.');
     }
 
     /**

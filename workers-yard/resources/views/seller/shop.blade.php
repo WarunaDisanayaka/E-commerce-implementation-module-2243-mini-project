@@ -24,11 +24,37 @@
                     <br>
                         <hr>
                     <div class="row">
-                        <div class="col-sm-6">
-                            <h1>{{$s->shopname}}</h1>
+                        <div class="col-sm-5" style="margin: 15px; border-right: 2px solid green;">
+                            <div class="shop-d">
+                                <h1>{{$s->shopname}}</h1>
+                                <h5 style="float: right">Catagory :  {{$s->shopcatagory}}</h5>
+                            </div>
+                            <br>
+                            <hr>
+
+                            <form action="{{route('shop.destroy', $s->id)}}" method="POST">
+                                <a href="{{route('shop.edit', $s->id)}}" class="btn btn-primary">Edit</a>
+
+                                @csrf
+                                @method("DELETE")
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+
                         </div>
+
                         <div class="col-sm-6">
-                            <h3 style="float: right">{{$s->shopcatagory}}</h3>
+                            <p>{{$s->shopdescription}}</p>
+                        </div>
+
+                    </div>
+                    <br><hr>
+
+                    <div class="row">
+
+                        <a href="" class="btn btn-primary">Add Service</a>
+
+                        <div class="col-sm-12">
+
                         </div>
                     </div>
 
@@ -46,5 +72,12 @@
             </div>
         </div>
 
+        <style>
+            .shop-d{
+
+            }
+        </style>
+
+<br><br>
 
 @endsection
