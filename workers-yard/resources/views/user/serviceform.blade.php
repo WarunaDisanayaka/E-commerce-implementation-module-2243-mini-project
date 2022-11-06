@@ -12,6 +12,11 @@
         text-align: center;
     }
 
+    .b{
+        margin-left: 80%;
+        
+    }
+
    
 
 </style>
@@ -158,7 +163,13 @@
         </div>
       </div>
   </div>
+<div class="b">
+  <button type="button" class="btn text-light" style="background-color: #1CBF73">Next</button>
 </div>
+</div>
+
+
+
 
 
 @include('layouts.footer')
