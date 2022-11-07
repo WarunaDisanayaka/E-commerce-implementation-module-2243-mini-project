@@ -21,6 +21,7 @@
 
                 <form action="{{route('shop.update', $shop->id)}}" method="post" enctype="multipart/form-data">
                     @csrf
+
                     @method('PUT')
 
                     <div class="mb-3 mt-3">
@@ -30,8 +31,10 @@
 
                     <div class="mb-3 mt-3">
                         <label for="scatagory" class="form-label">Shop Catagory:</label>
+
                         <select class="form-select" name="shopcatagory">
                             <option value="{{$shop->shopcatagory}}">{{$shop->shopcatagory}}</option>
+
                             @foreach ($catagory as $c)
                                 <option value="{{$c->catagory}}">{{$c->catagory}}</option>
                             @endforeach
@@ -41,11 +44,14 @@
                     <div class="mb-3 mt-3">
                         <label for="image" class="form-label">Select the banner image:</label>
                         <img src="{{asset('images/'.$shop->bannerimage)}}" alt="" width="100px">
+
                         <input type="hidden" name="bannerimage" value="{{$shop->bannerimage}}">
+
                     </div>
 
                     <div class="mb-3 mt-3">
                         <label for="description" class="form-label">Shop Description:</label>
+
                         <textarea class="form-control" rows="5" id="sdis" name="shopdescription">{{$shop->shopdescription}}</textarea>
                     </div>
 

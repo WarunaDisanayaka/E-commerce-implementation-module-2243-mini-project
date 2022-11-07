@@ -14,8 +14,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 
-
-
 class ServiceController extends Controller
 {
     /**
@@ -25,8 +23,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-       
-       
+
+
     }
 
 
@@ -39,7 +37,7 @@ class ServiceController extends Controller
     }
 
     /**
-    
+
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -49,7 +47,7 @@ class ServiceController extends Controller
         return view('seller.addservice');
     }
 
- 
+
     /**
      * Store a newly created resource in storage.
      *
@@ -58,15 +56,7 @@ class ServiceController extends Controller
      */
     public function store(StoreserviceRequest $request)
     {
-<<<<<<< Updated upstream
-        $id=shopname();
-        $service=new service();
-        $service->servicename=$request->name;
-        $service->servicedescription=$request->discription;
-        $service->shopid= $id;
-        $service->price=$request->price;
-        $service->serviceimage= $id;
-=======
+
         $request->validate([
             'servicename' => 'required|max:255',
             'servicedescription' => 'required|max:5000',
@@ -100,12 +90,11 @@ class ServiceController extends Controller
         $service->includeservice = $serin;
         $service->revision = $request->revisions;
         $service->diliverydates = $request->diliverydates;
->>>>>>> Stashed changes
 
         $service->save();
 
-        return back();
-
+        return redirect()->route('shop.index')
+            ->with('success','Your Service created successfully.');
     }
 
     /**

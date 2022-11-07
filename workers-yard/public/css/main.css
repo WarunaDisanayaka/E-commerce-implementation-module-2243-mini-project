@@ -16,7 +16,13 @@ body{
     margin-top: 2rem;
 }
 
+.navbar.sticky{
+    margin-top: auto;
+    background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+}
+
 .navbar .navbar-brand{
+    color: white;
     margin-left: 2rem;
 }
 
@@ -75,4 +81,281 @@ body{
     color: white;
     font-weight: 700;
     font-size: 80px;
+}
+
+/*SEARCH BAR CSS*/
+
+.search {
+    position: relative;
+    margin-top: 5rem;
+}
+
+.search input{
+    height: 60px;
+    text-indent: 25px;
+}
+
+.search .input:focus{
+    box-shadow: none;
+    border: 2px solid #1dbf73;
+}
+
+.search .fa-search{
+    position: absolute;
+    top: 20px;
+    left: 16px;
+}
+
+.search button{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 50px;
+    width: 110px;
+    background: #1dbf73;
+}
+
+.search button:hover{
+    background: grey;
+}
+
+/*Browse Categories*/
+
+.browse-categories{
+    margin-top: 4rem;
+}
+
+.browse-categories .main-title{
+    font-weight: bold;
+}
+
+.browse-categories .main-title .second-title{
+    color: #1dbf73;
+}
+
+/*Browse Categories Cards*/
+.categories{
+    margin-left: 20%;
+}
+
+.categories .row{
+    margin: 2rem;
+}
+
+.categories .col{
+    margin: 1rem;
+}
+
+.categories .card-body{
+    width: 197px;
+    height: 216px;
+    border-radius: 1rem;
+}
+
+.categories .card-body .icon{
+    color: white;
+    font-size: 50px;
+    margin-top: 2rem;
+    margin-left: 3.5rem;
+}
+
+.categories .card-body h4{
+    margin-left: 1.5rem;
+    color: white;
+    font-weight: 600;
+}
+
+.categories .card-body#card1{
+    background: #1dbf73;
+}
+
+.categories .card-body#card2{
+    background: #378fff;
+}
+
+.categories .card-body#card3{
+    background: #c71f66;
+}
+
+.categories .card-body#card4{
+    background: #be3eff;
+}
+
+.categories .card-body#card5{
+    background: #f86048;
+}
+
+.categories .card-body#card6{
+    background: #0fc393;
+}
+
+
+/*Gig */
+
+.gig{
+    margin-top: 8rem;
+}
+
+.gig .main-title{
+    font-weight: bold;
+}
+
+.gig .main-title .second-title{
+    color: #1dbf73;
+}
+
+
+
+/*Featured Services*/
+.featured-service{
+    margin-top: 2rem;
+}
+
+.featured-service .col-1{
+    margin: 5rem;
+}
+
+.featured-service .card-body h5{
+    font-weight: 600;
+}
+
+.featured-service .card-body button{
+    font-weight: 600;
+    background: #1dbf73;
+}
+
+/*Gig Navbar*/
+.navbar-gig{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 70px;
+    background: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.navbar-gig .navbar-brand{
+    color: black;
+}
+
+.navbar-gig ul li a{
+    color: black !important;
+}
+
+
+/*Breadcrum*/
+
+.gig-breadcrum{
+    margin: 0;
+    padding: 0;
+    height: 157px;
+    background: #f1f6ff;
+}
+
+.gig-breadcrum .content{
+    position: relative;
+    margin-top: 3%;
+}
+
+.gig-breadcrum .content .gig-title h3{
+    font-weight: bold;
+}
+
+/*Gig Description*/
+
+.gig-description .gig-details .gig-img img{
+    border-radius: 10px;
+}
+
+.gig-description .gig-details .seller-data{
+    display: flex;
+}
+
+.gig-description .gig-details .seller-data img{
+    width: 50px;
+    height: 50px;
+}
+
+.gig-description .gig-details .seller-data h5{
+    margin-left: 1rem;
+    font-size: 14px;
+}
+
+.gig-description .gig-details .gig-tab .tab-content{
+    margin-left: 1rem;
+}
+
+.gig-description .gig-details .gig-tab .tab-content .title-list h4{
+    font-weight: bold;
+}
+
+.gig-description .gig-details .gig-tab .tab-content ul li{
+    list-style: none;
+}
+
+.gig-description .gig-details .gig-tab .tab-content ul li::before{
+    content: "\2022";
+    color: #0fc393;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+
+}
+
+/* Package */
+.gig-package .package{
+    padding: 30px;
+    border: 1px solid rgba(221,221,221,.5);
+    border-radius: 10px;
+}
+
+.gig-package .package .package-name{
+    display: flex;
+    justify-content: space-between;
+}
+
+.gig-package .package .package-details{
+    padding: 1rem;
+}
+
+
+.gig-package .package .package-details h6{
+    font-weight: bold;
+}
+
+.gig-package .package .package-details ul{
+    list-style: none;
+}
+
+.gig-package .package .package-details ul li{
+    padding: 0.3rem;
+}
+
+.gig-package .package .package-details ul li::before{
+    padding: 0.3rem;
+    margin-right: 1rem;
+    content: "✓";
+    font-family: "line awesome free";
+    font-weight: 900;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-size: 14px;
+    height: 18px;
+    width: 20px;
+    color: #0fc393;
+    border: 1px solid #0fc393;
+    border-radius: 50%;
+}
+
+.gig-package .package .book-btn{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.gig-package .package button{
+    background: #1dbf73;
+    color: white;
 }

@@ -6,6 +6,7 @@ use App\Models\Shop;
 use App\Models\User;
 use App\Http\Requests\StoreShopRequest;
 use App\Http\Requests\UpdateShopRequest;
+use App\Models\Catagory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -20,8 +21,10 @@ class ShopController extends Controller
     {
         $id = Auth::user()->id;
         $shops = DB::select('select * from shops where sellerid = ?', [$id]);
+        $sid = $shops[0]->id;
+        $service = DB::select('select * from services where shopid = ?',[$sid]);
         $shopcount = DB::table('shops')->count();
-        return view('seller.shop', compact('shops','shopcount'));
+        return view('seller.shop', compact('shops','shopcount','service'));
     }
 
     /**
@@ -87,7 +90,8 @@ class ShopController extends Controller
      */
     public function edit(Shop $shop)
     {
-        //
+        $catagory = Catagory::all();
+        return view('seller.editshop', compact('shop','catagory'));
     }
 
     /**
@@ -99,9 +103,6 @@ class ShopController extends Controller
      */
     public function update(UpdateShopRequest $request, Shop $shop)
     {
-<<<<<<< Updated upstream
-        //
-=======
         $request->validate([
             'shopname' => 'required|max:255',
             'shopcatagory' => 'required|max:255',
@@ -113,7 +114,6 @@ class ShopController extends Controller
         return redirect()->route('shop.index')
             ->with('success','Your shop updated successfully.');
 
->>>>>>> Stashed changes
     }
 
     /**
@@ -124,6 +124,8 @@ class ShopController extends Controller
      */
     public function destroy(Shop $shop)
     {
-        //
+        $shop->delete();
+        return redirect()->route('shop.index')
+            ->with('success','Your shop Deleted successfully.');
     }
 }

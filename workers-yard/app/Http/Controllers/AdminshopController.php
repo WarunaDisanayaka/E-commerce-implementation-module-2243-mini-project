@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Orderconfermation;
-use App\Http\Requests\StoreOrderconfermationRequest;
-use App\Http\Requests\UpdateOrderconfermationRequest;
+use Illuminate\Http\Request;
+use App\Models\Shop;
+use Illuminate\Support\Facades\DB;
 
-class OrderconfermationController extends Controller
+class AdminshopController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,11 @@ class OrderconfermationController extends Controller
      */
     public function index()
     {
-        return view('user.serviceform');
+        $shops = DB::table('shops')
+                ->join('users', 'shops.sellerid', '=', 'users.id')
+                ->select('users.*', 'shops.*')
+                ->get();
+        return view('admin.shop', compact('shops'));
     }
 
     /**
@@ -31,10 +35,10 @@ class OrderconfermationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreOrderconfermationRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreOrderconfermationRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -42,10 +46,10 @@ class OrderconfermationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Orderconfermation  $orderconfermation
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Orderconfermation $orderconfermation)
+    public function show($id)
     {
         //
     }
@@ -53,10 +57,10 @@ class OrderconfermationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Orderconfermation  $orderconfermation
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Orderconfermation $orderconfermation)
+    public function edit($id)
     {
         //
     }
@@ -64,11 +68,11 @@ class OrderconfermationController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateOrderconfermationRequest  $request
-     * @param  \App\Models\Orderconfermation  $orderconfermation
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateOrderconfermationRequest $request, Orderconfermation $orderconfermation)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -76,11 +80,13 @@ class OrderconfermationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Orderconfermation  $orderconfermation
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Orderconfermation $orderconfermation)
+    public function destroy($id)
     {
-        //
+        $deleted = DB::delete('delete from shops where id = ?',[$id]);
+        return redirect()->route('adminshop.index')
+            ->with('success','Shop deleted successfully.');
     }
 }

@@ -10,6 +10,6 @@ class Shop extends Model
     use HasFactory;
 
     protected $fillable = [
-        'sname','scatagory','image','sdis'
+        'shopname','shopcatagory','bannerimage','shopdescription','sellerid',
     ];
 }
