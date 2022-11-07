@@ -99,7 +99,21 @@ class ShopController extends Controller
      */
     public function update(UpdateShopRequest $request, Shop $shop)
     {
+<<<<<<< Updated upstream
         //
+=======
+        $request->validate([
+            'shopname' => 'required|max:255',
+            'shopcatagory' => 'required|max:255',
+            'shopdescription' => 'required|max:5000',
+            'sellerid' => 'required|max:255'
+        ]);
+
+        $shop->update($request->all());
+        return redirect()->route('shop.index')
+            ->with('success','Your shop updated successfully.');
+
+>>>>>>> Stashed changes
     }
 
     /**

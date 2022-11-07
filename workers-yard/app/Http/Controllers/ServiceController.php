@@ -58,6 +58,7 @@ class ServiceController extends Controller
      */
     public function store(StoreserviceRequest $request)
     {
+<<<<<<< Updated upstream
         $id=shopname();
         $service=new service();
         $service->servicename=$request->name;
@@ -65,6 +66,41 @@ class ServiceController extends Controller
         $service->shopid= $id;
         $service->price=$request->price;
         $service->serviceimage= $id;
+=======
+        $request->validate([
+            'servicename' => 'required|max:255',
+            'servicedescription' => 'required|max:5000',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:204800',
+            'price' => 'required|max:255',
+            'includeservice' => 'max:2000',
+            'revisions' => 'max:255',
+            'diliverydate' => 'max:255',
+        ]);
+
+        $imageName = time().'.'.$request->image->extension();
+
+        $request->image->move(public_path('images'), $imageName);
+
+        $id = Auth::user()->id;
+        $shops = DB::select('select * from shops where sellerid = ?',[$id]);
+        $shopid = $shops[0]->id;
+
+        $ser = $request->includeservice;
+
+        $serarr = explode (",", $ser);
+        $serin = json_encode($serarr);
+
+        $service = new service();
+
+        $service->servicename = $request->servicename;
+        $service->shopid = $shopid;
+        $service->servicedescription = $request->servicedescription;
+        $service->serviceimage = $imageName;
+        $service->price = $request->price;
+        $service->includeservice = $serin;
+        $service->revision = $request->revisions;
+        $service->diliverydates = $request->diliverydates;
+>>>>>>> Stashed changes
 
         $service->save();
 
@@ -80,7 +116,7 @@ class ServiceController extends Controller
      */
     public function show(service $service)
     {
-        //
+        return view('seller.showservice', compact('service'));
     }
 
     /**
@@ -91,7 +127,7 @@ class ServiceController extends Controller
      */
     public function edit(service $service)
     {
-        //
+        return view('seller.editservice', compact('service'));
     }
 
     /**
@@ -103,7 +139,21 @@ class ServiceController extends Controller
      */
     public function update(UpdateserviceRequest $request, service $service)
     {
-        //
+        $request->validate([
+            'servicename' => 'required|max:255',
+            'shopid'=>'required|max:255',
+            'servicedescription' => 'required|max:5000',
+            'image' => 'required|max:255',
+            'price' => 'required|max:255',
+            'includeservice' => 'max:2000',
+            'revision' => 'max:255',
+            'diliverydate' => 'max:255',
+        ]);
+
+        $service->update($request->all());
+
+        return redirect()->route('shop.index')
+            ->with('success','Your Service updated successfully.');
     }
 
     /**
@@ -114,6 +164,9 @@ class ServiceController extends Controller
      */
     public function destroy(service $service)
     {
-        //
+        $service->delete();
+
+        return redirect()->route('shop.index')
+            ->with('success','The Service deleted successfully.');
     }
 }
