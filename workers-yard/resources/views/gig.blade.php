@@ -76,6 +76,16 @@
                             <h4>Package</h4>
                             <h4>25.00$</h4>
                         </div>
+                        <div class="package-details">
+                            <h6>Availabe Service Packages</h6>
+                            <ul>
+                                <li>One</li>
+                                <li>Two</li>
+                            </ul>
+                        </div>
+                        <div class="book-btn">
+                            <button class="btn">Book Now</button>
+                        </div>
                     </div>
                 </div>
             </div>

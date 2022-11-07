@@ -263,6 +263,10 @@ body{
 
 /*Gig Description*/
 
+.gig-description .gig-details .gig-img img{
+    border-radius: 10px;
+}
+
 .gig-description .gig-details .seller-data{
     display: flex;
 }
@@ -309,4 +313,49 @@ body{
 .gig-package .package .package-name{
     display: flex;
     justify-content: space-between;
+}
+
+.gig-package .package .package-details{
+    padding: 1rem;
+}
+
+
+.gig-package .package .package-details h6{
+    font-weight: bold;
+}
+
+.gig-package .package .package-details ul{
+    list-style: none;
+}
+
+.gig-package .package .package-details ul li{
+    padding: 0.3rem;
+}
+
+.gig-package .package .package-details ul li::before{
+    padding: 0.3rem;
+    margin-right: 1rem;
+    content: "✓";
+    font-family: "line awesome free";
+    font-weight: 900;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-size: 14px;
+    height: 18px;
+    width: 20px;
+    color: #0fc393;
+    border: 1px solid #0fc393;
+    border-radius: 50%;
+}
+
+.gig-package .package .book-btn{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.gig-package .package button{
+    background: #1dbf73;
+    color: white;
 }
