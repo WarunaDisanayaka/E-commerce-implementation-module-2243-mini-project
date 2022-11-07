@@ -42,6 +42,7 @@
 
                         </div>
 
+
                         <div class="col-sm-6">
                             <p>{{$s->shopdescription}}</p>
                         </div>
@@ -49,13 +50,36 @@
                     </div>
                     <br><hr>
 
+                   
+
                     <div class="row">
 
                         <a href="{{route('service.create')}}" class="btn btn-primary">Add Service</a>
 
-                        <div class="col-sm-12">
+                    </div>
+                    <br><br>
+                    <div class="row">
+                        @foreach ($service as $se)
+                            <div class="col-sm-4">
+                                <img class="img-fluid" src="{{asset('images/'.$se->serviceimage)}}" alt="New York">
+                                <hr>
+                                <h3>{{$se->servicename}}</h3>
+                                <br>
+                                <br>
+                                <form action="{{ route('service.destroy',$se->id) }}" method="POST">
 
-                        </div>
+                                    <a class="btn btn-info" href="{{ route('service.show',$se->id) }}">Show</a>
+
+                                    <a class="btn btn-primary" href="{{ route('service.edit',$se->id) }}">Edit</a>
+
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        @endforeach
+
                     </div>
 
 

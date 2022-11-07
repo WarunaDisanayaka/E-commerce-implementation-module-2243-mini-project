@@ -104,10 +104,10 @@ class ShopController extends Controller
     public function update(UpdateShopRequest $request, Shop $shop)
     {
         $request->validate([
-            'sname' => 'required|max:255',
-            'scatagory' => 'required|max:255',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:204800',
-            'sdis' => 'required|max:5000'
+            'shopname' => 'required|max:255',
+            'shopcatagory' => 'required|max:255',
+            'shopdescription' => 'required|max:5000',
+            'sellerid' => 'required|max:255'
         ]);
 
         $shop->update($request->all());
