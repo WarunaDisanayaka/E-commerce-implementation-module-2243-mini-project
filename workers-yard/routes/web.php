@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\CatagoryController;
 use App\Http\Controllers\OrderconfermationController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ServiceController;
 
 /*
@@ -58,6 +59,7 @@ Route::resource('adminshop', AdminshopController::class);
 
 
 Route::resource('serviceform',OrderconfermationController::class);
+Route::resource('order', OrderController::class);
 
 
 //Route::view('add','seller.addservice');
