@@ -16,6 +16,10 @@
         padding: 20px;
     }
 
+    .grid-item-2{
+        margin-left: -80px;
+    }
+
     .grid-item-8{
         grid-column: span 2;
     }
@@ -43,6 +47,20 @@
     .c{
         margin-left: 70%;
     }
+
+
+ul {
+  list-style: none;
+}
+
+ul li::before {
+  
+  color: red;
+  font-weight: bold;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em;
+}
 
 </style>
 
@@ -158,7 +176,7 @@
 
 
 
-    <div class="grid-item grid-item-11">
+    <div class="grid-item grid-item-11 mt-4">
         <h3>Benifits of the Package:</h3>
         <p class="my-3">Service Gurantee</p>
         <p class="my-3">Quality Service</p>
