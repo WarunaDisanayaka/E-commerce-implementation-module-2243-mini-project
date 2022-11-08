@@ -224,6 +224,11 @@ body{
     background: #1dbf73;
 }
 
+.featured-service .card-body .price{
+    display: flex;
+    justify-content: space-between;
+}
+
 /*Gig Navbar*/
 .navbar-gig{
     position: relative;

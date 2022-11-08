@@ -125,8 +125,10 @@
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <button class="btn btn-primary"><a href="{{ url('gig') }}">Book Now</a></button>
-
+                        <div class="price">
+                            <button class="btn btn-primary"><a href="{{ url('gig') }}">Book Now</a></button>
+                            <h3>150.00</h3>
+                        </div>
                     </div>
                   </div>
             </div>
@@ -155,13 +157,12 @@
 
         </div>
 
-
     </section>
 
 @include('layouts.footer')
 
 
-   
+
 
 
   </body>
