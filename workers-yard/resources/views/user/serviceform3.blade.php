@@ -3,7 +3,7 @@
 
 <style>
     .con{
-        margin: 50px;
+        margin: 70px;
     }
 
     .b{
@@ -14,7 +14,10 @@
 </style>
 
 
+
 <div class="con">
+
+    <h2 class="my-5">Booking Information</h2>
 
 <form>
     <div class="mb-3">
