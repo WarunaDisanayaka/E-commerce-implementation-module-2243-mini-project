@@ -20,7 +20,16 @@ class OrderController extends Controller
         $id = Auth::user()->id;
         $shop = DB::select('select * from shops where sellerid = ?', [$id]);
         $shopid = $shop[0]->id;
-        $orders = DB::select('select * from orders where sid = ? ORDER BY id DESC',[$shopid]);
+
+        //$orders = DB::select('select * from orders where sid = ? ORDER BY id DESC',[$shopid]);
+
+        $orders = DB::table('orders')
+                    ->join('services', 'orders.serviceid', '=', 'services.id')
+                    ->join('users', 'orders.userid', '=', 'users.id')
+                    ->select('users.*', 'services.*', 'orders.*')
+                    ->where('sid',$shopid)
+                    ->orderByDesc('orders.id')
+                    ->get();
 
         return view('seller.order', compact('orders'));
     }
@@ -54,7 +63,17 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        $ordersa = DB::table('orders')
+                    ->join('services', 'orders.serviceid', '=', 'services.id')
+                    ->join('users', 'orders.userid', '=', 'users.id')
+                    ->select('users.*', 'services.*', 'orders.*')
+                    ->where('orders.id',$order->id)
+                    ->limit(1)
+                    ->get();
+
+        $orders = $ordersa[0];
+
+        return view('seller.showorder',compact('orders'));
     }
 
     /**

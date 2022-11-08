@@ -60,6 +60,7 @@ Route::resource('adminshop', AdminshopController::class);
 
 Route::resource('serviceform',OrderconfermationController::class);
 Route::resource('order', OrderController::class);
+Route::resource('ordercom', OrderconfermationController::class);
 // Route::view('serviceform2', 'user.serviceform2');
 
 
