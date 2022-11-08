@@ -54,7 +54,7 @@
                     <div class="icon">
                         <i class="fa-solid fa-plug"></i>
                     </div>
-                    <h4 class="font-weight-bold">Electronic</h4>
+                    <h4 class="font-weight-bold">Electronics</h4>
                 </div>
               </div>
               <div class="col-3">
@@ -62,7 +62,7 @@
                     <div class="icon">
                         <i class="fa-solid fa-broom"></i>
                     </div>
-                    <h4 class="font-weight-bold">Electronic</h4>
+                    <h4 class="font-weight-bold">Cleaning</h4>
                 </div>
               </div>
               <div class="col-3">
@@ -70,7 +70,7 @@
                     <div class="icon">
                         <i class="fa-solid fa-paint-roller"></i>
                     </div>
-                    <h4 class="font-weight-bold">Electronic</h4>
+                    <h4 class="font-weight-bold">Painting</h4>
                 </div>
               </div>
             </div>
@@ -81,7 +81,7 @@
                       <div class="icon">
                         <i class="fa-solid fa-house-chimney"></i>
                       </div>
-                      <h4 class="font-weight-bold">Electronic</h4>
+                      <h4 class="font-weight-bold">House moving</h4>
                   </div>
                 </div>
                 <div class="col-3">
@@ -89,7 +89,7 @@
                       <div class="icon">
                         <i class="fa-sharp fa-solid fa-closed-captioning"></i>
                       </div>
-                      <h4 class="font-weight-bold">Electronic</h4>
+                      <h4 class="font-weight-bold">Digital</h4>
                   </div>
                 </div>
                 <div class="col-3">
@@ -97,7 +97,7 @@
                       <div class="icon">
                         <i class="fa-solid fa-scissors"></i>
                       </div>
-                      <h4 class="font-weight-bold">Electronic</h4>
+                      <h4 class="font-weight-bold">Saloon</h4>
                   </div>
                 </div>
               </div>

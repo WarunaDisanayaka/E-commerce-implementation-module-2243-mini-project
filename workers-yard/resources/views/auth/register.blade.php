@@ -42,6 +42,15 @@
             </div>
 
             <div class="mt-4">
+                <x-jet-label for="tel" value="{{ __('role') }}" />
+                <select class="form-select" class="block mt-1 w-full" name="role">
+                    <option value="notsay">Select one</option>
+                    <option value="Seller">Seller</option>
+                    <option value="Buyer">Buyer</option>
+                  </select>
+            </div>
+
+            <div class="mt-4">
 
                 <x-jet-input id="role" class="block mt-1 w-full" type="hidden" name="role" :value="3" required/>
             </div>
