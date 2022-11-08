@@ -34,12 +34,31 @@
                                         @csrf
                                         <a class="btn btn-info" href="{{ route('order.show',$o->id) }}">Show</a>
 
+                                        <input type="hidden" name="orderid" value="{{$o->id}}">
+                                                @php
+                                                    $co = 0;
+                                                @endphp
+                                        @foreach ($ocom as $c)
+                                            @if ($o->id == $c->orderid)
+                                                @php
+                                                    $co = 1;
+                                                @endphp
+                                            @else
+                                                @php
+                                                    $co = 0;
+                                                 @endphp
+                                            @endif
+                                        @endforeach
+
+                                        @if ($co == 1)
+                                            <button type="button" class="btn btn-success" disabled>Confirmed</button>
+                                        @else
+                                            <button type="submit" class="btn btn-success">Confirm</button>
+                                        @endif
 
 
-                                        @csrf
-                                        @method('DELETE')
 
-                                        <button type="submit" class="btn btn-success">Confirm</button>
+
                                     </form>
                                 </td>
                             </tr>

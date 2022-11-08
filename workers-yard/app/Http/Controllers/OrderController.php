@@ -31,7 +31,9 @@ class OrderController extends Controller
                     ->orderByDesc('orders.id')
                     ->get();
 
-        return view('seller.order', compact('orders'));
+        $ocom = DB::select('select * from orderconfermations');
+
+        return view('seller.order', compact('orders','ocom'));
     }
 
     /**
@@ -73,7 +75,9 @@ class OrderController extends Controller
 
         $orders = $ordersa[0];
 
-        return view('seller.showorder',compact('orders'));
+        $ocom = DB::select('select * from orderconfermations');
+
+        return view('seller.showorder',compact('orders','ocom'));
     }
 
     /**
