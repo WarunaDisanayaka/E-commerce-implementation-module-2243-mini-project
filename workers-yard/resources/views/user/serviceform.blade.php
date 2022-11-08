@@ -94,8 +94,18 @@
         <div class="box">
       <div class="card py-4 " style="background-color: #1CBF73">
         <div class="card-body">
-          <h4 class="card-title">Your Location</h4>
-          <p class="card-text">Sri lanaka North Western Kurunegala Sri lanka</p>
+          
+          {{-- <p class="card-text">Sri lanaka North Western Kurunegala Sri lanka</p> --}}
+
+          <label for="start">Start date:</label>
+
+          <input type="date" id="start" name="trip-start"
+                 value="2022-09-22"
+                 min="2020-01-01" max="2022-12-31">
+
+
+
+
         </div>
       </div>
     </div>
@@ -104,39 +114,26 @@
    
     <div class="col-sm-2">
         <div class="card border-white">
-          <div class="card-body my-5">
-            <h6 class="card-title">Service Country</h6> 
+          <div class="card-body">
+            <h6 class="card-title">Available Schedule</h6> 
 
-            <div class="dropdown">
-                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown button
+            
+                <button class="btn btn-outline-secondary " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  12.00AM-1.00PM
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </div>
-
+    
           </div>
         </div>
       </div>
 
     <div class="col-sm-2">
         <div class="card border-white">
-          <div class="card-body my-5">
-            <h6 class="card-title">Service City</h6> 
+          <div class="card-body">
+            <h6 class="card-title">.</h6> 
 
-            <div class="dropdown">
-                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown button
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </div>
+            <button class="btn btn-outline-secondary " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                10.00AM-11.00PM
+              </button>
 
           </div>
         </div>
@@ -145,26 +142,21 @@
      
     <div class="col-sm-2">
         <div class="card border-white">
-          <div class="card-body my-5">
-            <h6 class="card-title">Service Area</h6> 
+          <div class="card-body ">
+            <h6 class="card-title">.</h6> 
 
-            <div class="dropdown">
-                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown button
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </div>
+            <button class="btn btn-outline-secondary " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                04.00AM-05.00PM
+              </button>
 
           </div>
         </div>
       </div>
   </div>
 <div class="b">
-  <button type="button" class="btn text-light" style="background-color: #1CBF73">Next</button>
+    <a href="{{url('serviceform')}}"><button type="button" class="btn text-dark px-3"  style="border-color: #1CBF73">back</button></a>
+  <button type="button" class="btn text-light px-3" style="background-color: #1CBF73">Next</button>
+ 
 </div>
 </div>
 
