@@ -56,16 +56,20 @@
                              </ul>
                            </div>
 
-                           <div class="title-list">
+                           {{-- <div class="title-list">
                             <h4>Benefits of the premium Package:</h4>
                             <ul>
                                <li>fdl</li>
                                <li>fsd</li>
                             </ul>
-                          </div>
+                          </div> --}}
                         </div>
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-
+                            <table>
+                                <tr>
+                                    th
+                                </tr>
+                            </table>
                         </div>
                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 
