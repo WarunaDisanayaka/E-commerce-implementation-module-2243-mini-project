@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -15,7 +17,12 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $id = Auth::user()->id;
+        $shop = DB::select('select * from shops where sellerid = ?', [$id]);
+        $shopid = $shop[0]->id;
+        $orders = DB::select('select * from orders where sid = ? ORDER BY id DESC',[$shopid]);
+
+        return view('seller.order', compact('orders'));
     }
 
     /**

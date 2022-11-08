@@ -17,7 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('serviceid');
             $table->string('userid');
-            $table->string('orderdescription');
+            $table->text('orderdescription');
+            $table->string('date');
+            $table->string('time');
+            $table->string('sid');
             $table->timestamps();
         });
     }
