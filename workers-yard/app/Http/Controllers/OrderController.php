@@ -54,7 +54,22 @@ class OrderController extends Controller
      */
     public function store(StoreOrderRequest $request)
     {
-        //
+        $serviceid = $request->serviceid;
+        $shops = DB::select('select * from services where id = ?',[$serviceid]);
+        $shopid = $shops[0]->shopid;
+
+        $order = new Order();
+
+        $order->serviceid = $serviceid;
+        $order->userid = Auth::user()->id;
+        $order->orderdescription = $request->text;
+        $order->date = $request->date;
+        $order->time = $request->time;
+        $order->sid = $shopid;
+
+        $order->save();
+
+        return redirect()->route('dashboard');
     }
 
     /**

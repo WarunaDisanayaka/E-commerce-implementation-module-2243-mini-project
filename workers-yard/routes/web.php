@@ -12,6 +12,7 @@ use App\Http\Controllers\OrderconfermationController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,12 +50,17 @@ Route::middleware([
         }elseif ($role == 2) {
             return view('seller.seller');
         }elseif ($role == 3) {
-            return view('home');
+            if(Session::get('serid')){
+                $sid = Session::get('serid');
+                Session::forget('serid');
+                return redirect()->route('front.edit', $sid);
+            }
+            return view('user.dashboard');
         }
         else{
             return view('dashboard');
         }
-        return view('dashboard');
+
     })->name('dashboard');
 });
 

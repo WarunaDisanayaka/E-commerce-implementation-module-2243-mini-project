@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class CusfrontController extends Controller
 {
@@ -24,7 +26,7 @@ class CusfrontController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.serviceform');
     }
 
     /**
@@ -35,7 +37,11 @@ class CusfrontController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sid = $request->sid;
+        $date = $request->date;
+        $time = $request->time;
+
+        return view('user.serviceform3', compact('date','time','sid'));
     }
 
     /**
@@ -64,7 +70,13 @@ class CusfrontController extends Controller
      */
     public function edit($id)
     {
-        //
+        if (Auth::check()) {
+            return view('user.serviceform', compact('id'));
+        }else{
+            Session::put('serid',$id);
+            return redirect()->route('login');
+        }
+
     }
 
     /**

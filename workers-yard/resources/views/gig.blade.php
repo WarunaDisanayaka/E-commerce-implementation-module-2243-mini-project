@@ -65,14 +65,13 @@
                           </div> --}}
                         </div>
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <table>
-                                <tr>
-                                    th
-                                </tr>
-                            </table>
+                            <p><b>Seller name &nbsp; &nbsp;  : </b>{{$seller->name}}</p>
+                            <p><b>Seller Address &nbsp; &nbsp;  : </b>{{$seller->address}}</p>
+                            <p><b>Seller Join Date &nbsp; &nbsp;  : </b>{{$seller->created_at}}</p>
                         </div>
                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-
+                            <p><b>Seller Email &nbsp; &nbsp;  : </b>{{$seller->email}}</p>
+                            <p><b>Seller Phone Number &nbsp; &nbsp;  : </b>{{$seller->tel}}</p>
                         </div>
                       </div>
                 </div>
@@ -82,17 +81,22 @@
                     <div class="row">
                         <div class="package-name">
                             <h4>Package</h4>
-                            <h4>25.00$</h4>
+                            <h4>RS. {{$service->price}}</h4>
                         </div>
                         <div class="package-details">
                             <h6>Availabe Service Packages</h6>
                             <ul>
-                                <li>One</li>
-                                <li>Two</li>
+                                @php
+                                    $inc = json_decode($service->includeservice);
+                                @endphp
+                                @foreach ($inc as $i)
+                                    <li>{{$i}}</li>
+                                @endforeach
                             </ul>
                         </div>
                         <div class="book-btn">
-                            <button class="btn">Book Now</button>
+
+                            <a href="{{route('front.edit',$service->id)}}" class="btn btn-success">Book Now</a>
                         </div>
                     </div>
                 </div>
