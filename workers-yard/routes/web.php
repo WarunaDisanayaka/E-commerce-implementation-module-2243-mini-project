@@ -63,9 +63,22 @@ Route::resource('service', ServiceController::class);
 Route::resource('adminshop', AdminshopController::class);
 
 
+
 Route::resource('serviceform',OrderconfermationController::class);
 Route::view('serviceform2', 'user.serviceform');
 Route::view('serviceform3', 'user.serviceform3');
+// Route::view('servicelist', 'servicelist');
+
+Route::get('servicelist', function () {
+    $service = DB::table('services')
+                ->inRandomOrder()
+                ->limit(9)
+                ->get();
+    return view('servicelist', compact('service'));
+});
+
+
+
 Route::resource('order', OrderController::class);
 Route::resource('ordercom', OrderconfermationController::class);
 // Route::view('serviceform2', 'user.serviceform2');
