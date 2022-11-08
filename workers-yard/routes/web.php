@@ -59,7 +59,8 @@ Route::resource('adminshop', AdminshopController::class);
 
 
 Route::resource('serviceform',OrderconfermationController::class);
- Route::view('serviceform2', 'user.serviceform');
+Route::view('serviceform2', 'user.serviceform');
+Route::view('serviceform3', 'user.serviceform3');
 Route::resource('order', OrderController::class);
 Route::resource('ordercom', OrderconfermationController::class);
 // Route::view('serviceform2', 'user.serviceform2');

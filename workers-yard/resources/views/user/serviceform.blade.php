@@ -155,7 +155,7 @@
   </div>
 <div class="b">
     <a href="{{url('serviceform')}}"><button type="button" class="btn text-dark px-3"  style="border-color: #1CBF73">back</button></a>
-  <button type="button" class="btn text-light px-3" style="background-color: #1CBF73">Next</button>
+  <a href="{{url('serviceform3')}}"> <button type="button" class="btn text-light px-3" style="background-color: #1CBF73">Next</button> </a>
  
 </div>
 </div>
