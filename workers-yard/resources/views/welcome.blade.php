@@ -126,7 +126,7 @@
                         <div class="card-body">
                         <h5 class="card-title">{{$s->servicename}}</h5>
                         <p class="card-text"></p>
-                        <button class="btn btn-primary"><a href="{{ url('gig',$s->id) }}">Book Now</a></button>
+                        <button class="btn btn-primary"><a href="{{route('front.show',$s->id)}}">Book Now</a></button>
 
                         </div>
                     </div>

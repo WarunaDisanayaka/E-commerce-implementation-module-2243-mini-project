@@ -9,7 +9,7 @@
                     <h5>Home | Service List</h5>
                 </div>
                 <div class="gig-title">
-                    <h3>AC Cleaning Service ! Get ASAP And Take The Best Benifits</h3>
+                    <h3>{{$service->servicename}}</h3>
                 </div>
             </div>
         </div>
@@ -23,11 +23,11 @@
         <div class="row">
             <div class="col gig-details">
                 <div class="gig-img">
-                    <img src="{{ asset('img/gig-img.png') }}" alt="" srcset="">
+                    <img src="{{ asset('images/'.$service->serviceimage) }}" alt="" srcset="">
                 </div>
                 <div class="seller-data mt-3">
                     <img src="{{ asset('img/seller-img.jpg') }}" class="img-thumbnail rounded-circle" alt="" srcset="">
-                    <h5 class="seller-name mt-3">Test Seller</h5>
+                    <h5 class="seller-name mt-3">{{$seller->name}}</h5>
                 </div>
                 <div class="gig-tab mt-3">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -43,12 +43,16 @@
                       </ul>
                       <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis voluptatem rerum distinctio similique culpa aperiam modi neque praesentium, sint tempora eius id, error maxime, dolores laudantium expedita. Mollitia, nihil laboriosam!</p>
+                           <p>{{$service->servicedescription}}</p>
                            <div class="title-list">
                              <h4>What you will get</h4>
                              <ul>
-                                <li>fdl</li>
-                                <li>fsd</li>
+                                @php
+                                    $inc = json_decode($service->includeservice);
+                                @endphp
+                                @foreach ($inc as $i)
+                                    <li>{{$i}}</li>
+                                @endforeach
                              </ul>
                            </div>
 
@@ -61,7 +65,7 @@
                           </div>
                         </div>
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            
+
                         </div>
                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 
