@@ -119,7 +119,7 @@
 
     <section class="container featured-service">
         <div class="row">
-<<<<<<< HEAD
+
             <div class="col-4">
                 <div class="card" style="width: 349px;">
                     <img src="{{ asset('img/gigimg1.jpg') }}" class="card-img-top" alt="...">
@@ -129,7 +129,6 @@
                         <div class="price">
                             <button class="btn btn-primary"><a href="{{ url('gig') }}">Book Now</a></button>
                             <h3>150.00</h3>
-=======
             @foreach ($service as $s)
                 <div class="col-4">
                     <div class="card" style="width: 349px;">
@@ -138,8 +137,6 @@
                         <h5 class="card-title">{{$s->servicename}}</h5>
                         <p class="card-text"></p>
                         <button class="btn btn-primary"><a href="{{ url('gig',$s->id) }}">Book Now</a></button>
-
->>>>>>> main
                         </div>
                     </div>
                 </div>
