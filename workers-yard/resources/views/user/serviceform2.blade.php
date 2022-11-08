@@ -175,7 +175,7 @@
 
 <div class="b">
     
-    <a href="{{url('serviceform2')}}"><button type="button" class="btn text-light"  style="background-color: #1CBF73">Next</button></a>
+    <a href="{{url('serviceform2')}}"><button type="button" class="btn text-light px-3"  style="background-color: #1CBF73">Next</button></a>
   </div>
 
 
