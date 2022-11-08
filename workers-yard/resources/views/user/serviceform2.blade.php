@@ -48,7 +48,7 @@
 
     <div class="grid-item grid-item-1">
         {{-- <h1>a</h1> --}}
-        <img src="{{asset('img/sample.png')}}" width="400" height="200" alt="sample">
+        <img class="rounded" src="{{asset('img/sample.png')}}" width="400" height="200" alt="sample">
         
     </div>
 
