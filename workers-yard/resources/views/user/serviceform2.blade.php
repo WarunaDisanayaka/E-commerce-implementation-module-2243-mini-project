@@ -46,13 +46,19 @@
 
 </style>
 
+<!-- CSS -->
+<link href="https://unpkg.com/smartwizard@6/dist/css/smart_wizard_all.min.css" rel="stylesheet" type="text/css" />
+
+<!-- JavaScript -->
+<script src="https://unpkg.com/smartwizard@6/dist/js/jquery.smartWizard.min.js" type="text/javascript"></script>
+
 <div class="con">
 
 <div class="grid-container my-4 ">
 
     <div class="grid-item grid-item-1">
         {{-- <h1>a</h1> --}}
-        <img class="rounded" src="{{asset('img/sample.png')}}" width="400" height="200" alt="sample">
+        <img class="rounded" src="{{asset('img/sample.png')}}" width="350" height="200" alt="sample">
         
     </div>
 
@@ -154,8 +160,8 @@
 
     <div class="grid-item grid-item-11">
         <h3>Benifits of the Package:</h3>
-        <p>Service Gurantee</p>
-        <p>Quality Service</p>
+        <p class="my-3">Service Gurantee</p>
+        <p class="my-3">Quality Service</p>
     </div>
 
 
@@ -169,9 +175,28 @@
 
 <div class="b">
     
-    <button type="button" class="btn text-light" style="background-color: #1CBF73">Next</button>
+    <a href="{{url('serviceform2')}}"><button type="button" class="btn text-light"  style="background-color: #1CBF73">Next</button></a>
   </div>
 
 
 
+
+
+
+
+
+
+  
+
 @include('layouts.footer')
+
+
+
+{{-- 
+nav start --}}
+
+
+
+
+
+{{-- nav end --}}
