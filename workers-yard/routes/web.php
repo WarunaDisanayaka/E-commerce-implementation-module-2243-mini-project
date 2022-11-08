@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminshopController;
+use App\Http\Controllers\OrderListController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -61,7 +62,7 @@ Route::resource('shop', ShopController::class);
 Route::resource('catagory', CatagoryController::class);
 Route::resource('service', ServiceController::class);
 Route::resource('adminshop', AdminshopController::class);
-
+Route::resource('dashboard',OrderListController::class);
 
 Route::resource('serviceform',OrderconfermationController::class);
 Route::view('serviceform2', 'user.serviceform');
