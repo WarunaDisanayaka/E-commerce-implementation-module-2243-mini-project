@@ -160,7 +160,7 @@ body{
 }
 
 .categories .card-body h4{
-    margin-left: 1.5rem;
+    text-align: center;
     color: white;
     font-weight: 600;
 }
