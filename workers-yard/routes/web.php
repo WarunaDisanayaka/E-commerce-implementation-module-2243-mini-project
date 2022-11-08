@@ -68,12 +68,11 @@ Route::resource('adminshop', AdminshopController::class);
 Route::resource('serviceform',OrderconfermationController::class);
 Route::view('serviceform2', 'user.serviceform');
 Route::view('serviceform3', 'user.serviceform3');
-// Route::view('servicelist', 'servicelist');
+
 
 Route::get('servicelist', function () {
     $service = DB::table('services')
                 ->inRandomOrder()
-                ->limit(9)
                 ->get();
     return view('servicelist', compact('service'));
 });
