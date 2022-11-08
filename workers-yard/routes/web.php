@@ -10,6 +10,7 @@ use App\Http\Controllers\CatagoryController;
 use App\Http\Controllers\OrderconfermationController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ServiceController;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,11 @@ use App\Http\Controllers\ServiceController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $service = DB::table('services')
+                ->inRandomOrder()
+                ->limit(9)
+                ->get();
+    return view('welcome', compact('service'));
 });
 
 Route::get('gig',function(){
