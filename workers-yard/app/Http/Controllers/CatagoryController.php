@@ -73,7 +73,7 @@ class CatagoryController extends Controller
     public function edit($id)
     {
         $catagories = DB::select('select * from catagories where id = ?', [$id]);
-        return view('admin.createcatagory', compact('catagories'));
+        return view('admin.catagoryedit', compact('catagories'));
     }
 
     /**
@@ -100,10 +100,10 @@ class CatagoryController extends Controller
      * @param  \App\Models\Catagory  $catagory
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Catagory $catagory)
     {
-        echo $id;
-        //$catagory->delete();
+        $catagory->delete();
+
         return redirect()->route('catagory.index')
             ->with('success','Category deleted successfully.');
     }

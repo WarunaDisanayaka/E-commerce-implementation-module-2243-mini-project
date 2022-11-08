@@ -56,13 +56,13 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+            <img src="{{ Auth::user()->profile_photo_url }}" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name }}</span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
+              <h6>{{ Auth::user()->name }}</h6>
               <span>Web Designer</span>
             </li>
             <li>
@@ -100,10 +100,15 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
-              </a>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <!--a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <span>Sign Out</span>
+                    </a-->
+                    <i class="bi bi-box-arrow-right"></i>
+                    <button type="submit">Sign Out</button>
+                </form>
             </li>
 
           </ul><!-- End Profile Dropdown Items -->
@@ -126,28 +131,109 @@
         </a>
       </li><!-- End Dashboard Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Modal</span>
+      @if (Auth::user()->role == 1)
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-menu-button-wide"></i><span>Catagory</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Tabs</span>
+            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+                <a href="{{route('catagory.index')}}">
+                <i class="bi bi-circle"></i><span>View Catagory</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{route('catagory.create')}}">
+                <i class="bi bi-circle"></i><span>Add Catagory</span>
+                </a>
+            </li>
+
+            </ul>
+        </li><!-- End Components Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-menu-button-wide"></i><span>Shop</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Pagination</span>
+            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+                <a href="{{route('adminshop.index')}}">
+                <i class="bi bi-circle"></i><span>View Shops</span>
+                </a>
+            </li>
+
+
+            </ul>
+        </li><!-- End Components Nav -->
+
+        @elseif (Auth::user()->role == 2)
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-menu-button-wide"></i><span>MY Shop</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-          </li>
-        </ul>
-      </li><!-- End Components Nav -->
+            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+              <li>
+                <a href="{{route('shop.index')}}">
+                  <i class="bi bi-circle"></i><span>View Shop</span>
+                </a>
+              </li>
+              <li>
+                <a href="{{route('service.create')}}">
+                  <i class="bi bi-circle"></i><span>Add Service</span>
+                </a>
+              </li>
+
+            </ul>
+          </li><!-- End Components Nav -->
+
+          <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-menu-button-wide"></i><span>Orders</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+              <li>
+                <a href="{{route('order.index')}}">
+                  <i class="bi bi-circle"></i><span>View Orders</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="bi bi-circle"></i><span>Tabs</span>
+                </a>
+              </li>
+
+            </ul>
+          </li><!-- End Components Nav -->
+
+          <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+              <li>
+                <a href="#">
+                  <i class="bi bi-circle"></i><span>Modal</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="bi bi-circle"></i><span>Tabs</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="bi bi-circle"></i><span>Pagination</span>
+                </a>
+              </li>
+            </ul>
+          </li><!-- End Components Nav -->
+
+
+
+      @endif
+
+
     </ul>
 
   </aside><!-- End Sidebar-->
@@ -165,10 +251,8 @@
     </div>
 
     <section class="section dashboard">
-      <div class="row">
-        <div class="col-lg-8">
-
-        </div>
+      <div class="container">
+        @yield('content')
       </div>
     </section>
 

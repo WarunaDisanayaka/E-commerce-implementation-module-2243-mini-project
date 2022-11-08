@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -63,18 +65,17 @@
                 @if (Route::has('login'))
                 <a href="#" class="nav-link dropdown-toggle m-2 menu-item" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Acc</a>
                 <box-icon name='user' class="user-icon" color="#ffffff"></box-icon>
-                @auth
-                <!--
-                    <a href="{{ url('/dashboard') }}">Dash</a>
-                    <box-icon name='user' class="user-icon"></box-icon>
-                -->
-                @else
-                <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
 
-                    <li><a class="dropdown-item" href="{{ route('login') }}">Log in</a></li>
-                    @if (Route::has('register'))
-                        <li><a class="dropdown-item" href="{{ route('register') }}">Register</a></li>
-                    @endif
+                <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="dropdown-item" style="color: black;">Dashboard</a>
+                    @else
+
+                        <li><a class="dropdown-item" href="{{ route('login') }}">Log in</a></li>
+                        @if (Route::has('register'))
+                            <li><a class="dropdown-item" href="{{ route('register') }}">Register</a></li>
+                        @endif
+
                 @endauth
 
                   </ul>

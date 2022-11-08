@@ -1,11 +1,16 @@
 <?php
 
+use App\Http\Controllers\AdminshopController;
 use Illuminate\Support\Facades\Route;
 
 
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\CatagoryController;
+use App\Http\Controllers\OrderconfermationController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ServiceController;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +24,11 @@ use App\Http\Controllers\CatagoryController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $service = DB::table('services')
+                ->inRandomOrder()
+                ->limit(9)
+                ->get();
+    return view('welcome', compact('service'));
 });
 
 Route::get('gig',function(){
@@ -50,3 +59,20 @@ Route::middleware([
 
 Route::resource('shop', ShopController::class);
 Route::resource('catagory', CatagoryController::class);
+Route::resource('service', ServiceController::class);
+Route::resource('adminshop', AdminshopController::class);
+
+
+Route::resource('serviceform',OrderconfermationController::class);
+Route::view('serviceform2', 'user.serviceform');
+Route::view('serviceform3', 'user.serviceform3');
+Route::resource('order', OrderController::class);
+Route::resource('ordercom', OrderconfermationController::class);
+// Route::view('serviceform2', 'user.serviceform2');
+
+
+//Route::view('add','seller.addservice');
+//Route::post('add', [ServiceController::class, 'store']);
+
+
+//Route::get('service', [ServiceController::class, 'create']);

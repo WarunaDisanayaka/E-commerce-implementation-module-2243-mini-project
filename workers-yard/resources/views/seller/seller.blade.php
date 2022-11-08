@@ -1,1 +1,5 @@
-<h1>sellere</h1>
+@extends('layouts.main')
+
+@section('content')
+
+@endsection

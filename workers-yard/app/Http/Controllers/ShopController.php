@@ -6,6 +6,7 @@ use App\Models\Shop;
 use App\Models\User;
 use App\Http\Requests\StoreShopRequest;
 use App\Http\Requests\UpdateShopRequest;
+use App\Models\Catagory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -20,8 +21,10 @@ class ShopController extends Controller
     {
         $id = Auth::user()->id;
         $shops = DB::select('select * from shops where sellerid = ?', [$id]);
+        $sid = $shops[0]->id;
+        $service = DB::select('select * from services where shopid = ?',[$sid]);
         $shopcount = DB::table('shops')->count();
-        return view('seller.shop', compact('shops','shopcount'));
+        return view('seller.shop', compact('shops','shopcount','service'));
     }
 
     /**
@@ -31,7 +34,8 @@ class ShopController extends Controller
      */
     public function create()
     {
-        return view('seller.createshop');
+        $catagory = DB::select('select * from catagories');
+        return view('seller.createshop', compact('catagory'));
     }
 
     /**
@@ -42,7 +46,29 @@ class ShopController extends Controller
      */
     public function store(StoreShopRequest $request)
     {
-        //
+        $request->validate([
+            'sname' => 'required|max:255',
+            'scatagory' => 'required|max:255',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:204800',
+            'sdis' => 'required|max:5000'
+        ]);
+
+        $imageName = time().'.'.$request->image->extension();
+
+        $request->image->move(public_path('images'), $imageName);
+
+        $seller = Auth::user()->id;
+
+        $shop = new Shop();
+        $shop->shopname = $request->sname;
+        $shop->shopcatagory = $request->scatagory;
+        $shop->bannerimage = $imageName;
+        $shop->shopdescription = $request->sdis;
+        $shop->sellerid = $seller;
+        $shop->save();
+
+        return redirect()->route('shop.index')
+            ->with('success','Your shop created successfully.');
     }
 
     /**
@@ -64,7 +90,8 @@ class ShopController extends Controller
      */
     public function edit(Shop $shop)
     {
-        //
+        $catagory = Catagory::all();
+        return view('seller.editshop', compact('shop','catagory'));
     }
 
     /**
@@ -76,7 +103,17 @@ class ShopController extends Controller
      */
     public function update(UpdateShopRequest $request, Shop $shop)
     {
-        //
+        $request->validate([
+            'shopname' => 'required|max:255',
+            'shopcatagory' => 'required|max:255',
+            'shopdescription' => 'required|max:5000',
+            'sellerid' => 'required|max:255'
+        ]);
+
+        $shop->update($request->all());
+        return redirect()->route('shop.index')
+            ->with('success','Your shop updated successfully.');
+
     }
 
     /**
@@ -87,6 +124,8 @@ class ShopController extends Controller
      */
     public function destroy(Shop $shop)
     {
-        //
+        $shop->delete();
+        return redirect()->route('shop.index')
+            ->with('success','Your shop Deleted successfully.');
     }
 }

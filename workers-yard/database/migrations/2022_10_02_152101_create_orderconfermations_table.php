@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('orderconfermations', function (Blueprint $table) {
             $table->id();
+            $table->string('orderid');
             $table->string('comfermlevel');
             $table->timestamps();
         });

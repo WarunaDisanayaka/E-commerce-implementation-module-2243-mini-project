@@ -1,4 +1,4 @@
-@extends('layouts.seller')
+@extends('layouts.main')
 
 @section('content')
 <br><br>
@@ -27,11 +27,11 @@
                         <td>{{$c->id}}</td>
                         <td>{{$c->catagory}}</td>
                         <td>
-                            <form action="{{route('catagory.destroy', $c->id)}}">
+                            <form action="{{route('catagory.destroy', $c->id)}}" method="POST">
                                 <a href="{{route('catagory.edit', $c->id)}}" class="btn btn-primary">Edit</a>
 
-
-                                @method('DELETE')
+                                @csrf
+                                @method("DELETE")
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
                         </td>

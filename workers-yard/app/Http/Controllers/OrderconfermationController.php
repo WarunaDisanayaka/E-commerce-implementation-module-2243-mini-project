@@ -15,7 +15,7 @@ class OrderconfermationController extends Controller
      */
     public function index()
     {
-        //
+        return view('user.serviceform2');
     }
 
     /**
@@ -36,7 +36,14 @@ class OrderconfermationController extends Controller
      */
     public function store(StoreOrderconfermationRequest $request)
     {
-        //
+        $ocom = new Orderconfermation();
+
+        $ocom->orderid = $request->orderid;
+        $ocom->comfermlevel = 1;
+
+        $ocom->save();
+
+        return redirect()->route('order.index');
     }
 
     /**
