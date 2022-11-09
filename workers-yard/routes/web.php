@@ -57,7 +57,8 @@ Route::middleware([
                 Session::forget('serid');
                 return redirect()->route('front.edit', $sid);
             }
-            return view('user.dashboard');
+            $orders = DB::table('orders') ->get();;
+            return view('user.dashboard',compact('orders'));
         }
         else{
             return view('dashboard');
@@ -70,7 +71,7 @@ Route::resource('shop', ShopController::class);
 Route::resource('catagory', CatagoryController::class);
 Route::resource('service', ServiceController::class);
 Route::resource('adminshop', AdminshopController::class);
-Route::resource('dashboard',OrderListController::class);
+// Route::resource('dashboard',OrderListController::class);
 
 
 Route::resource('serviceform',OrderconfermationController::class);
