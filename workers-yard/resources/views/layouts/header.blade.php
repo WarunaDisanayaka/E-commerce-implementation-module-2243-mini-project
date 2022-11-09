@@ -56,7 +56,7 @@
                 <a href="#" class="nav-link m-2 menu-item">About</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link m-2 menu-item">Service List</a>
+                <a href="{{url('servicelist')}}" class="nav-link m-2 menu-item">Service List</a>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link m-2 menu-item">Price Plan</a>
