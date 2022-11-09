@@ -57,8 +57,11 @@ Route::middleware([
                 Session::forget('serid');
                 return redirect()->route('front.edit', $sid);
             }
-            $orders = DB::table('orders') ->get();;
-            return view('user.dashboard',compact('orders'));
+            $orders = DB::table('orders') ->get();
+            $ocount=count($orders);
+            
+
+            return view('user.dashboard',compact('orders','ocount'));
         }
         else{
             return view('dashboard');
