@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\CatagoryController;
 use App\Http\Controllers\CusfrontController;
+use App\Http\Controllers\CusorderController;
 use App\Http\Controllers\OrderconfermationController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ServiceController;
@@ -89,6 +90,7 @@ Route::get('servicelist', function () {
 Route::resource('order', OrderController::class);
 Route::resource('ordercom', OrderconfermationController::class);
 Route::resource('front', CusfrontController::class);
+Route::resource('cusorder', CusorderController::class);
 // Route::view('serviceform2', 'user.serviceform2');
 
 
